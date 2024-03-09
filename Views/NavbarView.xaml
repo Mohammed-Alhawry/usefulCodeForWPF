@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="ExperimentalThingsUsingWPF.Views.NavbarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <Grid>
+        <Grid.Resources>
+            <Style BasedOn="{StaticResource ButtonStyle}"
+                   x:Key="topButtonStyles"
+                   TargetType="Button">
+                <Setter Property="Height"
+                        Value="40" />
+                <Setter Property="Width"
+                        Value="50" />
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver"
+                             Value="True">
+                        <Setter Property="Background"
+                                Value="{StaticResource SecondaryColor}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            
+            <Button VerticalAlignment="Top"
+                    Click="MinimizedButton_Click"
+                    Style="{StaticResource topButtonStyles}">
+
+                <materialDesign:PackIcon Kind="WindowMinimize"
+                                         Foreground="White" />
+
+            </Button>
+            <Button VerticalAlignment="Top"
+                    Click="MaximizedButton_Click"
+                    Style="{StaticResource topButtonStyles}">
+                <materialDesign:PackIcon Kind="SquareOutline"
+                                         Foreground="White" />
+            </Button>
+            <Button VerticalAlignment="Top"
+                    Click="CloseButton_Click"
+                    Style="{StaticResource topButtonStyles}"  >
+
+                <materialDesign:PackIcon Kind="CloseBold"
+                                         Foreground="White" />
+            </Button>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

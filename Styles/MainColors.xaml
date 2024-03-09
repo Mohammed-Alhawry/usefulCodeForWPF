@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    
+    <!--primary -->
+    <SolidColorBrush Color="{StaticResource blue950Color}" x:Key="MainColor"/>
+
+    <!--color for when the controle is under hover or ischecked-->
+    <SolidColorBrush Color="{StaticResource blue900Color}" x:Key="SecondaryColor"/>
+    
+    <!--color for when controls are not under hover or ischecked-->
+    <SolidColorBrush Color="{StaticResource slate500Color}" x:Key="ThirdColor"/>
+</ResourceDictionary>

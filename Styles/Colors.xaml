@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Slate Colors-->
+    <Color x:Key="slate900Color"></Color>
+    <SolidColorBrush Color="#1e293b"
+                     x:Key="slate800Color" />
+    <SolidColorBrush Color="#334155"
+                     x:Key="slate700Color" />
+    <SolidColorBrush Color="#475569"
+                     x:Key="slate600Color" />
+    <Color x:Key="slate500Color">#64748b</Color>
+    <SolidColorBrush Color="#94a3b8"
+                     x:Key="slate400Color" />
+    <SolidColorBrush Color="#cbd5e1"
+                     x:Key="slate300Color" />
+
+    <!--Blue Colors-->
+
+    <Color x:Key="blue950Color">#172554</Color>
+    <Color x:Key="blue900Color">#1e3a8a</Color>
+    <SolidColorBrush Color="#1e40af"
+                     x:Key="blue800Color" />
+    <SolidColorBrush Color="#1d4ed8"
+                     x:Key="blue700Color" />
+    <SolidColorBrush Color="#2563eb"
+                     x:Key="blue600Color" />
+    <SolidColorBrush Color="#3b82f6"
+                     x:Key="blue500Color" />
+    <SolidColorBrush Color="#60a5fa"
+                     x:Key="blue400Color" />
+    <SolidColorBrush Color="#93c5fd"
+                     x:Key="blue300Color" />
+    <SolidColorBrush Color="#bfdbfe"
+                     x:Key="blue200Color" />
+    <SolidColorBrush Color="#dbeafe"
+                     x:Key="blue100Color" />
+
+    <!--Teal colors-->
+    <SolidColorBrush Color="#042f2e"
+                     x:Key="teal950Color" />
+    <SolidColorBrush Color="#134e4a"
+                     x:Key="teal900Color" />
+    <SolidColorBrush Color="#115e59"
+                     x:Key="teal800Color" />
+    <SolidColorBrush Color="#0f766e"
+                     x:Key="teal700Color" />
+    <SolidColorBrush Color="#0d9488"
+                     x:Key="teal600Color" />
+    <SolidColorBrush Color="#14b8a6"
+                     x:Key="teal500Color" />
+    <SolidColorBrush Color="#2dd4bf"
+                     x:Key="teal400Color" />
+    <SolidColorBrush Color="#5eead4"
+                     x:Key="teal300Color" />
+    <SolidColorBrush Color="#99f6e4"
+                     x:Key="teal200Color" />
+    <SolidColorBrush Color="#ccfbf1"
+                     x:Key="teal100Color" />
+
+</ResourceDictionary>
