@@ -9,5 +9,5 @@
     <SolidColorBrush Color="{StaticResource blue900Color}" x:Key="SecondaryColor"/>
     
     <!--color for when controls are not under hover or ischecked-->
-    <SolidColorBrush Color="{StaticResource slate500Color}" x:Key="ThirdColor"/>
+    <SolidColorBrush Color="{StaticResource slate400Color}" x:Key="ThirdColor"/>
 </ResourceDictionary>

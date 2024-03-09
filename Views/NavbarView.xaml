@@ -8,8 +8,9 @@
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800">
-    <Grid>
-        <Grid.Resources>
+
+    <Border CornerRadius="0 10 10 0">
+        <Border.Resources>
             <Style BasedOn="{StaticResource ButtonStyle}"
                    x:Key="topButtonStyles"
                    TargetType="Button">
@@ -26,10 +27,11 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
-        </Grid.Resources>
+        </Border.Resources>
+        
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Right">
-            
+
             <Button VerticalAlignment="Top"
                     Click="MinimizedButton_Click"
                     Style="{StaticResource topButtonStyles}">
@@ -45,13 +47,29 @@
                                          Foreground="White" />
             </Button>
             <Button VerticalAlignment="Top"
-                    Click="CloseButton_Click"
-                    Style="{StaticResource topButtonStyles}"  >
+                    Click="CloseButton_Click">
+                <Button.Style>
+                    <Style BasedOn="{StaticResource ButtonStyle}"
+                           TargetType="Button">
+                        <Setter Property="Height"
+                                Value="40" />
+                        <Setter Property="Width"
+                                Value="50" />
 
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Background"
+                                        Value="Red" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
                 <materialDesign:PackIcon Kind="CloseBold"
                                          Foreground="White" />
             </Button>
-            
+
         </StackPanel>
-    </Grid>
+    </Border>
+
 </UserControl>

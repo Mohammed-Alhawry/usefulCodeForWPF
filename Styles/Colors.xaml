@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--Slate Colors-->
-    <Color x:Key="slate900Color"></Color>
+    <Color x:Key="slate900Color">#0f172a</Color>
     <SolidColorBrush Color="#1e293b"
                      x:Key="slate800Color" />
     <SolidColorBrush Color="#334155"
@@ -9,8 +9,7 @@
     <SolidColorBrush Color="#475569"
                      x:Key="slate600Color" />
     <Color x:Key="slate500Color">#64748b</Color>
-    <SolidColorBrush Color="#94a3b8"
-                     x:Key="slate400Color" />
+    <Color x:Key="slate400Color">#94a3b8</Color>
     <SolidColorBrush Color="#cbd5e1"
                      x:Key="slate300Color" />
 
@@ -24,8 +23,7 @@
                      x:Key="blue700Color" />
     <SolidColorBrush Color="#2563eb"
                      x:Key="blue600Color" />
-    <SolidColorBrush Color="#3b82f6"
-                     x:Key="blue500Color" />
+    <Color x:Key="blue500Color">#3b82f6</Color>
     <SolidColorBrush Color="#60a5fa"
                      x:Key="blue400Color" />
     <SolidColorBrush Color="#93c5fd"
@@ -42,8 +40,7 @@
                      x:Key="teal900Color" />
     <SolidColorBrush Color="#115e59"
                      x:Key="teal800Color" />
-    <SolidColorBrush Color="#0f766e"
-                     x:Key="teal700Color" />
+    <Color x:Key="teal700Color">#0f766e</Color>
     <SolidColorBrush Color="#0d9488"
                      x:Key="teal600Color" />
     <SolidColorBrush Color="#14b8a6"

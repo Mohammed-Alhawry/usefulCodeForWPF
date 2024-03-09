@@ -14,23 +14,30 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        MouseDown="Window_MouseDown"
-        
-        >
+        MouseDown="Window_MouseDown">
 
     <Border Background="{StaticResource MainColor}"
             CornerRadius="10"
-            Padding="0 0 3 0">
-        
+            BorderThickness="1">
+        <Border.BorderBrush>
+            <LinearGradientBrush>
+                <GradientStop Color="{StaticResource blue500Color}"
+                              Offset="0" />
+                <GradientStop Color="#0e7490"
+                              Offset="0.5" />
+                <GradientStop Color="{StaticResource teal700Color}"
+                              Offset="1" />
+            </LinearGradientBrush>
+        </Border.BorderBrush>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            
+
             <views:DashboredView />
-            
-            <views:NavbarView Grid.Column="1"/>
+
+            <views:NavbarView Grid.Column="1" />
 
         </Grid>
     </Border>
