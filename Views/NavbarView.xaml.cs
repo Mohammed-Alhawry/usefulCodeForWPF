@@ -1,5 +1,6 @@
 ﻿// Ignore Spelling: Navbar
 
+using ExperimentalThingsUsingWPF.Windows;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -34,8 +35,6 @@ namespace ExperimentalThingsUsingWPF.Views
                 MainWindow.WindowState = WindowState.Normal;
             else
             {
-                var window = new Window();
-                
                 MainWindow.WindowState = WindowState.Maximized;   
             }
         }

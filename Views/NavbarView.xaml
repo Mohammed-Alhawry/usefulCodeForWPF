@@ -9,7 +9,8 @@
              d:DesignHeight="450"
              d:DesignWidth="800">
 
-    <Border CornerRadius="0 10 10 0">
+    <Border CornerRadius="0 10 10 0"
+            Padding="0 3.5 0 0">
         <Border.Resources>
             <Style BasedOn="{StaticResource ButtonStyle}"
                    x:Key="topButtonStyles"
@@ -49,13 +50,8 @@
             <Button VerticalAlignment="Top"
                     Click="CloseButton_Click">
                 <Button.Style>
-                    <Style BasedOn="{StaticResource ButtonStyle}"
+                    <Style BasedOn="{StaticResource topButtonStyles}"
                            TargetType="Button">
-                        <Setter Property="Height"
-                                Value="40" />
-                        <Setter Property="Width"
-                                Value="50" />
-
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver"
                                      Value="True">

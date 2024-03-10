@@ -9,23 +9,25 @@
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450"
-        Width="800"
+        Height="700"
+        Width="1300"
+        ResizeMode="CanResize"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown"
+        WindowStartupLocation="CenterScreen">
 
     <Border Background="{StaticResource MainColor}"
             CornerRadius="10"
             BorderThickness="1">
         <Border.BorderBrush>
             <LinearGradientBrush>
-                <GradientStop Color="{StaticResource blue500Color}"
+                <GradientStop Color="{Binding Source={StaticResource blue500Color}, Path=Color}"
                               Offset="0" />
-                <GradientStop Color="#0e7490"
+                <GradientStop Color="{Binding Source={StaticResource teal400Color}, Path=Color}"
                               Offset="0.5" />
-                <GradientStop Color="{StaticResource teal700Color}"
+                <GradientStop Color="{Binding Source={StaticResource teal700Color}, Path=Color}"
                               Offset="1" />
             </LinearGradientBrush>
         </Border.BorderBrush>

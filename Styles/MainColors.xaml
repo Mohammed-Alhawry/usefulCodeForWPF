@@ -3,11 +3,11 @@
     
     
     <!--primary -->
-    <SolidColorBrush Color="{StaticResource blue950Color}" x:Key="MainColor"/>
+    <SolidColorBrush Color="{Binding  Source={StaticResource blue950Color}, Path=Color}" x:Key="MainColor"/>
 
     <!--color for when the controle is under hover or ischecked-->
-    <SolidColorBrush Color="{StaticResource blue900Color}" x:Key="SecondaryColor"/>
+    <SolidColorBrush Color="{Binding Source={StaticResource blue900Color}, Path=Color}" x:Key="SecondaryColor"/>
     
     <!--color for when controls are not under hover or ischecked-->
-    <SolidColorBrush Color="{StaticResource slate400Color}" x:Key="ThirdColor"/>
+    <SolidColorBrush Color="{Binding Source={StaticResource slate400Color}, Path=Color}" x:Key="ThirdColor"/>
 </ResourceDictionary>

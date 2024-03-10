@@ -7,104 +7,107 @@
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Views"
              mc:Ignorable="d"
-             d:DesignHeight="450"
+             d:DesignHeight="550"
              d:DesignWidth="800">
     <Border CornerRadius="10 0 0 10">
         <Border.Background>
             <LinearGradientBrush StartPoint="0 0"
-                                 EndPoint="1 0.7">
-                <GradientStop Color="{StaticResource slate900Color}"
+                                 EndPoint="1 1">
+                <GradientStop Color="{Binding Source={StaticResource slate950Color}, Path=Color}"
                               Offset="0" />
-                <GradientStop Color="{StaticResource blue900Color}"
+                <GradientStop Color="{Binding Source={StaticResource blue900Color}, Path=Color}"
                               Offset="1" />
             </LinearGradientBrush>
         </Border.Background>
-        <StackPanel>
-            <Ellipse Width="50"
-                     Height="50"
-                     Stroke="{StaticResource teal600Color}"
-                     StrokeThickness="2"
-                     Margin="10">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="/Images/dental.png" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <RadioButton Style="{StaticResource dashboredItem}"
-                         IsChecked="True"
-                         Tag="{x:Static Brushes.White}">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Icon="Home"
-                                  Style="{StaticResource dashboredItemIcon}" />
-                    <TextBlock Text="Home"
-                               Style="{StaticResource dashboredItemText}" />
-                </StackPanel>
-            </RadioButton>
+        <ScrollViewer>
 
-            <RadioButton Style="{StaticResource dashboredItem}"
-                         Tag="{x:Static Brushes.White}">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Icon="Teeth"
-                                  Style="{StaticResource dashboredItemIcon}" />
-                    <TextBlock Text="Materials"
-                               Style="{StaticResource dashboredItemText}" />
-                </StackPanel>
-            </RadioButton>
+            <StackPanel>
+                <Ellipse Width="80"
+                         Height="80"
+                         Stroke="{StaticResource teal600Color}"
+                         StrokeThickness="2"
+                         Margin="10">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Images/dental.png" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <RadioButton Style="{StaticResource dashboredItem}"
+                             IsChecked="True"
+                             Tag="{x:Static Brushes.White}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Home"
+                                      Style="{StaticResource dashboredItemIcon}" />
+                        <TextBlock Text="Home"
+                                   Style="{StaticResource dashboredItemText}" />
+                    </StackPanel>
+                </RadioButton>
 
-            <RadioButton Style="{StaticResource dashboredItem}"
-                         Tag="{x:Static Brushes.White}">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Icon="UserTie"
-                                  Style="{StaticResource dashboredItemIcon}" />
-                    <TextBlock Text="Employees"
-                               Style="{StaticResource dashboredItemText}" />
-                </StackPanel>
-            </RadioButton>
-            <RadioButton Style="{StaticResource dashboredItem}"
-                         Tag="{x:Static Brushes.White}">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Icon="Warehouse"
-                                  Style="{StaticResource dashboredItemIcon}" />
-                    <TextBlock Text="Warehouses"
-                               Style="{StaticResource dashboredItemText}" />
-                </StackPanel>
-            </RadioButton>
-            <RadioButton Style="{StaticResource dashboredItem}"
-                         Tag="{x:Static Brushes.White}">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Icon="FileAlt"
-                                  Style="{StaticResource dashboredItemIcon}" />
-                    <TextBlock Text="Reports"
-                               Style="{StaticResource dashboredItemText}" />
-                </StackPanel>
-            </RadioButton>
-            <RadioButton Style="{StaticResource dashboredItem}"
-                         Tag="{x:Static Brushes.White}">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Icon="Users"
-                                  Style="{StaticResource dashboredItemIcon}" />
-                    <TextBlock Text="Users"
-                               Style="{StaticResource dashboredItemText}" />
-                </StackPanel>
-            </RadioButton>
-            <RadioButton Style="{StaticResource dashboredItem}"
-                         Tag="{x:Static Brushes.White}">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Icon="ClinicMedical"
-                                  Style="{StaticResource dashboredItemIcon}" />
-                    <TextBlock Text="Clinics"
-                               Style="{StaticResource dashboredItemText}" />
-                </StackPanel>
-            </RadioButton>
-            <RadioButton Style="{StaticResource dashboredItem}"
-                         Tag="{x:Static Brushes.White}">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Icon="Dollar"
-                                  Style="{StaticResource dashboredItemIcon}" />
-                    <TextBlock Text="Bills"
-                               Style="{StaticResource dashboredItemText}" />
-                </StackPanel>
-            </RadioButton>
+                <RadioButton Style="{StaticResource dashboredItem}"
+                             Tag="{x:Static Brushes.White}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Teeth"
+                                      Style="{StaticResource dashboredItemIcon}" />
+                        <TextBlock Text="Materials"
+                                   Style="{StaticResource dashboredItemText}" />
+                    </StackPanel>
+                </RadioButton>
 
-        </StackPanel>
+                <RadioButton Style="{StaticResource dashboredItem}"
+                             Tag="{x:Static Brushes.White}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="UserTie"
+                                      Style="{StaticResource dashboredItemIcon}" />
+                        <TextBlock Text="Employees"
+                                   Style="{StaticResource dashboredItemText}" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource dashboredItem}"
+                             Tag="{x:Static Brushes.White}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Warehouse"
+                                      Style="{StaticResource dashboredItemIcon}" />
+                        <TextBlock Text="Warehouses"
+                                   Style="{StaticResource dashboredItemText}" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource dashboredItem}"
+                             Tag="{x:Static Brushes.White}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="FileAlt"
+                                      Style="{StaticResource dashboredItemIcon}" />
+                        <TextBlock Text="Reports"
+                                   Style="{StaticResource dashboredItemText}" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource dashboredItem}"
+                             Tag="{x:Static Brushes.White}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Users"
+                                      Style="{StaticResource dashboredItemIcon}" />
+                        <TextBlock Text="Users"
+                                   Style="{StaticResource dashboredItemText}" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource dashboredItem}"
+                             Tag="{x:Static Brushes.White}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="ClinicMedical"
+                                      Style="{StaticResource dashboredItemIcon}" />
+                        <TextBlock Text="Clinics"
+                                   Style="{StaticResource dashboredItemText}" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource dashboredItem}"
+                             Tag="{x:Static Brushes.White}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Dollar"
+                                      Style="{StaticResource dashboredItemIcon}" />
+                        <TextBlock Text="Bills"
+                                   Style="{StaticResource dashboredItemText}" />
+                    </StackPanel>
+                </RadioButton>
+
+            </StackPanel>
+        </ScrollViewer>
     </Border>
 </UserControl>
