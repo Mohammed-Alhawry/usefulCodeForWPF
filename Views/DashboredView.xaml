@@ -19,7 +19,8 @@
                               Offset="1" />
             </LinearGradientBrush>
         </Border.Background>
-        <ScrollViewer>
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
 
             <StackPanel>
                 <Ellipse Width="80"

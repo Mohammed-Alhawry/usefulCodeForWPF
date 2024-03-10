@@ -13,7 +13,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-
+        
     }
 
     private void MainWindow_StateChanged(object sender, EventArgs e)
