@@ -40,9 +40,17 @@
             </Grid.ColumnDefinitions>
 
             <views:DashboredView />
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
 
-            <views:NavbarView Grid.Column="1" />
+                <views:NavbarView />
 
+                <ContentControl />
+
+            </Grid>
         </Grid>
     </Border>
 
