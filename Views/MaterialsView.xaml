@@ -41,41 +41,12 @@
                     Height="580"
                     Margin="5"
                     Padding="10">
-                <DataGrid x:Name="materialsGrid"
-                          Background="{StaticResource blue900Color}"
-                          ColumnWidth="*"
-                          BorderThickness="0"
-                          HeadersVisibility="Column"
-                          ColumnHeaderStyle="{StaticResource SimpleColumnHeaderStyle}">
-                    <DataGrid.Style>
-                        <Style BasedOn="{StaticResource {x:Type DataGrid}}"
-                               TargetType="DataGrid">
+                <DataGrid Style="{DynamicResource DataGridStyle}"
+                          ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}"
+                          CellStyle="{DynamicResource DataGridCellStyle}"
+                          RowStyle="{DynamicResource DataGridRowStyle}"
+                          x:Name="materialsGrid">
 
-                            <Setter Property="CanUserAddRows"
-                                    Value="False" />
-                            <Setter Property="AutoGenerateColumns"
-                                    Value="False" />
-                            <Setter Property="CanUserReorderColumns"
-                                    Value="False" />
-                            <Setter Property="CanUserSortColumns"
-                                    Value="False" />
-                            <Setter Property="CanUserResizeColumns"
-                                    Value="False" />
-                            <Setter Property="SelectionUnit"
-                                    Value="FullRow" />
-                            <Setter Property="SelectionMode"
-                                    Value="Single" />
-                        </Style>
-                    </DataGrid.Style>
-                    <DataGrid.RowStyle>
-                        <Style TargetType="DataGridRow">
-                            <Setter Property="Background"
-                                    Value="Transparent" />
-                            <Setter Property="Foreground"
-                                    Value="{StaticResource slate300Color}" />
-
-                        </Style>
-                    </DataGrid.RowStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Id}"
                                             ClipboardContentBinding="{x:Null}"
