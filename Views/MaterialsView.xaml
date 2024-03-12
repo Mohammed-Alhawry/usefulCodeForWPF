@@ -8,60 +8,10 @@
              xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="800" Loaded="MaterialsView_Loaded">
+             d:DesignWidth="800"
+             Loaded="MaterialsView_Loaded">
     <Grid Margin="10">
-        <Grid.Resources>
-            <Style TargetType="DataGridColumnHeader"
-                   x:Key="ColumnHeaderStyle">
-                <Setter Property="Background"
-                        Value="Transparent" />
-                <Setter Property="Foreground"
-                        Value="{StaticResource slate300Color}" />
-                <Setter Property="FontSize"
-                        Value="15" />
-                <Setter Property="Padding"
-                        Value="10 0 0 10" />
-            </Style>
-            <Style TargetType="Button"
-                   x:Key="SearchButtonStyle">
-                <Setter Property="Background"
-                        Value="{StaticResource blue800Color}" />
-                <Setter Property="Foreground"
-                        Value="{StaticResource blue100Color}" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="7"
-                                    Width="40"
-                                    Height="30"
-                                    Background="{TemplateBinding Background}">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                                  VerticalAlignment="Center" />
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
 
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver"
-                             Value="True">
-                        <Setter Property="Background"
-                                Value="{StaticResource blue900Color}" />
-                        <Setter Property="Foreground"
-                                Value="{StaticResource slate300Color}" />
-                    </Trigger>
-
-                    <Trigger Property="IsFocused"
-                             Value="True">
-                        <Setter Property="Background"
-                                Value="{StaticResource blue900Color}" />
-                        <Setter Property="Foreground"
-                                Value="{StaticResource slate300Color}" />
-                    </Trigger>
-                </Style.Triggers>
-
-            </Style>
-        </Grid.Resources>
         <StackPanel>
 
             <StackPanel Orientation="Horizontal"
@@ -70,24 +20,10 @@
                               Height="20"
                               Width="20"
                               Foreground="{StaticResource blue700Color}" />
-                <TextBox 
-                         Width="300"
-                         Foreground="{StaticResource slate500Color}"
-                         Style="{StaticResource TextBoxStyle}"
-                         BorderBrush="{StaticResource blue700Color}"
-                         CaretBrush="{StaticResource blue700Color}"
-                         VerticalContentAlignment="Center"
-                         Margin="5"
-                         Height="24"
-                         VerticalAlignment="Center"
-                         Background="Transparent"
-                         BorderThickness="0 0 0 1"
-                         Text="Search..."
+                <TextBox Width="300"
                          GotFocus="SearchTextBox_GotFocus"
                          LostFocus="SearchTextBox_LostFocus"
-                         FontFamily="Montserrat"
-                         FontWeight="Medium"
-                         FontSize="13">
+                         Style="{StaticResource SearchTextBoxStyle}">
 
                 </TextBox>
 
@@ -106,11 +42,11 @@
                     Margin="5"
                     Padding="10">
                 <DataGrid x:Name="materialsGrid"
-                          
                           Background="{StaticResource blue900Color}"
                           ColumnWidth="*"
                           BorderThickness="0"
-                          ColumnHeaderStyle="{StaticResource ColumnHeaderStyle}">
+                          HeadersVisibility="Column"
+                          ColumnHeaderStyle="{StaticResource SimpleColumnHeaderStyle}">
                     <DataGrid.Style>
                         <Style BasedOn="{StaticResource {x:Type DataGrid}}"
                                TargetType="DataGrid">
@@ -123,7 +59,10 @@
                                     Value="False" />
                             <Setter Property="CanUserSortColumns"
                                     Value="False" />
-
+                            <Setter Property="CanUserResizeColumns"
+                                    Value="False" />
+                            <Setter Property="SelectionUnit"
+                                    Value="FullRow" />
                             <Setter Property="SelectionMode"
                                     Value="Single" />
                         </Style>
@@ -134,7 +73,7 @@
                                     Value="Transparent" />
                             <Setter Property="Foreground"
                                     Value="{StaticResource slate300Color}" />
-                            
+
                         </Style>
                     </DataGrid.RowStyle>
                     <DataGrid.Columns>

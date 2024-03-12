@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="DataGridColumnHeader"
+           x:Key="SimpleColumnHeaderStyle">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="Foreground"
+                Value="{StaticResource slate300Color}" />
+        <Setter Property="FontSize"
+                Value="15" />
+        <Setter Property="Padding"
+                Value="10 0 0 10" />
+    </Style>
+
+</ResourceDictionary>

@@ -7,7 +7,7 @@
                      Color="#FF7EB4EA" />
     <SolidColorBrush x:Key="TextBox.Focus.Border"
                      Color="#FF569DE5" />
-    <Style x:Key="TextBoxStyle"
+    <Style x:Key="TextBoxStyle" x:Name="textBoxStyle"
            TargetType="{x:Type TextBox}">
         <Setter Property="Background"
                 Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
@@ -48,13 +48,19 @@
                             <Setter Property="Opacity"
                                     TargetName="border"
                                     Value="0.56" />
+                            
+                        </Trigger>
+                        <Trigger Property="IsFocused"
+                                 Value="True">
+                            <Setter Property="Foreground"
+                                    Value="White" />
                         </Trigger>
                         <Trigger Property="IsMouseOver"
                                  Value="true">
                             <Setter Property="BorderBrush"
                                     TargetName="border"
                                     Value="{StaticResource teal400Color}" />
-                            
+
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused"
                                  Value="true">
@@ -79,9 +85,8 @@
             </MultiTrigger>
             <Trigger Property="IsMouseOver"
                      Value="True">
-                <Setter Property="Foreground"
-                        Value="White" />
             </Trigger>
+            
         </Style.Triggers>
     </Style>
 </ResourceDictionary>
