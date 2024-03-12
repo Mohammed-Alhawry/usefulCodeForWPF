@@ -48,7 +48,9 @@
 
                 <views:NavbarView />
 
-                <ContentControl />
+                <ContentControl Grid.Row="1">
+                    <views:MaterialsView />
+                </ContentControl>
 
             </Grid>
         </Grid>
