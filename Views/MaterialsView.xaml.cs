@@ -1,18 +1,7 @@
 ﻿using ExperimentalThingsUsingWPF.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ExperimentalThingsUsingWPF.Models;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ExperimentalThingsUsingWPF.Views
 {
@@ -41,9 +30,20 @@ namespace ExperimentalThingsUsingWPF.Views
                 searchBox.Text = "Search...";
         }
 
-        private void MaterialsView_Loaded(object sender, RoutedEventArgs e)
+        private async void MaterialsView_Loaded(object sender, RoutedEventArgs e)
         {
-            materialsGrid.ItemsSource = DataProvider.GetMaterials();
+            materialsGrid.ItemsSource = await GetMaterials();
+        }
+
+        private async Task<IEnumerable<Material>> GetMaterials()
+        {
+            List<Material> materials = new();
+            await Task.Run(() =>
+            {
+                materials = DataProvider.GetMaterials();
+            });
+            
+            return materials;
         }
     }
 }

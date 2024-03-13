@@ -12,7 +12,7 @@
                 <ResourceDictionary Source="/Styles/MainColors.xaml" />
                 <ResourceDictionary Source="/Styles/TextBoxStyles.xaml" />
                 <ResourceDictionary Source="/Styles/SearchTextBoxStyle.xaml" />
-                <ResourceDictionary Source="/Styles/SimpleDataGridColumnHeaderStyle.xaml" />
+                
                 <ResourceDictionary Source="/Styles/SearchButtonStyles.xaml" />
                 <ResourceDictionary Source="/Styles/DataGridStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>

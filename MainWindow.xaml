@@ -25,9 +25,9 @@
             <LinearGradientBrush>
                 <GradientStop Color="{Binding Source={StaticResource blue500Color}, Path=Color}"
                               Offset="0" />
-                <GradientStop Color="{Binding Source={StaticResource teal400Color}, Path=Color}"
+                <GradientStop Color="{Binding Source={StaticResource cian400Color}, Path=Color}"
                               Offset="0.4" />
-                <GradientStop Color="{Binding Source={StaticResource teal700Color}, Path=Color}"
+                <GradientStop Color="{Binding Source={StaticResource cian700Color}, Path=Color}"
                               Offset="0.7" />
                 <GradientStop Color="{Binding Source={StaticResource blue500Color}, Path=Color}"
                               Offset="1" />
@@ -48,9 +48,8 @@
 
                 <views:NavbarView />
 
-                <ContentControl Grid.Row="1">
-                    <views:MaterialsView />
-                </ContentControl>
+                <ContentControl Grid.Row="1"
+                                x:Name="contentControl" />
 
             </Grid>
         </Grid>

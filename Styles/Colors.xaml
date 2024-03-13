@@ -17,6 +17,27 @@
                      Color="#94a3b8" />
     <SolidColorBrush Color="#cbd5e1"
                      x:Key="slate300Color" />
+    <!--Cian Colors-->
+    <SolidColorBrush Color="#083344"
+                     x:Key="cian950Color" />
+    <SolidColorBrush Color="#164e63"
+                     x:Key="cian900Color" />
+    <SolidColorBrush Color="#155e75"
+                     x:Key="cian800Color" />
+    <SolidColorBrush Color="#0e7490"
+                     x:Key="cian700Color" />
+    <SolidColorBrush Color="#0891b2"
+                     x:Key="cian600Color" />
+    <SolidColorBrush Color="#06b6d4"
+                     x:Key="cian500Color" />
+    <SolidColorBrush x:Key="cian400Color"
+                     Color="#22d3ee" />
+    <SolidColorBrush Color="#67e8f9"
+                     x:Key="cian300Color" />
+    <SolidColorBrush Color="#a5f3fc"
+                     x:Key="cian200Color" />
+    <SolidColorBrush Color="#cffafe"
+                     x:Key="cian100Color" />
 
     <!--Blue Colors-->
 
@@ -64,7 +85,7 @@
                      x:Key="orange100Color" />
     <SolidColorBrush Color="#fff7ed"
                      x:Key="orange50Color" />
-    
+
     <!--Teal colors-->
     <SolidColorBrush Color="#042f2e"
                      x:Key="teal950Color" />

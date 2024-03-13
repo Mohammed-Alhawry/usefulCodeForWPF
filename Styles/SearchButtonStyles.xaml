@@ -9,8 +9,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="7"
-                            Width="50"
+                    <Border CornerRadius="15"
+                            Width="60"
                             Height="30"
                             Background="{TemplateBinding Background}">
                         <ContentPresenter HorizontalAlignment="Center"
@@ -24,14 +24,14 @@
             <Trigger Property="IsMouseOver"
                      Value="True">
                 <Setter Property="Background"
-                        Value="{StaticResource teal900Color}" />
+                        Value="{StaticResource cian900Color}" />
                 
             </Trigger>
 
             <Trigger Property="IsFocused"
                      Value="True">
                 <Setter Property="Background"
-                        Value="{StaticResource teal900Color}" />
+                        Value="{StaticResource cian900Color}" />
                 
             </Trigger>
         </Style.Triggers>

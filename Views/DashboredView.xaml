@@ -25,7 +25,7 @@
             <StackPanel>
                 <Ellipse Width="80"
                          Height="80"
-                         Stroke="{StaticResource teal600Color}"
+                         Stroke="{StaticResource cian800Color}"
                          StrokeThickness="2"
                          Margin="10">
                     <Ellipse.Fill>
@@ -44,7 +44,9 @@
                 </RadioButton>
 
                 <RadioButton Style="{StaticResource dashboredItem}"
-                             Tag="{x:Static Brushes.White}">
+                             Tag="{x:Static Brushes.White}"
+                             Checked="MaterialsMenuButton_Checked"
+                             Unchecked="MaterialsMenuButton_UnChecked">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Teeth"
                                       Style="{StaticResource dashboredItemIcon}" />
