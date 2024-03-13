@@ -33,7 +33,7 @@
                         FontSize="12"
                         FontFamily="Montserrat"
                         BorderThickness="0"
-                        Foreground="White" />
+                        />
             </StackPanel>
 
             <Border CornerRadius="10"

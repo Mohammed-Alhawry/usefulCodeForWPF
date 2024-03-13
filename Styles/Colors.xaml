@@ -41,6 +41,30 @@
     <SolidColorBrush Color="#dbeafe"
                      x:Key="blue100Color" />
 
+    <!--Orange colors-->
+    <SolidColorBrush Color="#431407"
+                     x:Key="orange950Color" />
+    <SolidColorBrush Color="#7c2d12"
+                     x:Key="orange900Color" />
+    <SolidColorBrush Color="#9a3412"
+                     x:Key="orange800Color" />
+    <SolidColorBrush Color="#c2410c"
+                     x:Key="orange700Color" />
+    <SolidColorBrush Color="#ea580c"
+                     x:Key="orange600Color" />
+    <SolidColorBrush x:Key="orange500Color"
+                     Color="#f97316" />
+    <SolidColorBrush x:Key="orange400Color"
+                     Color="#fb923c" />
+    <SolidColorBrush Color="#fdba74"
+                     x:Key="orange300Color" />
+    <SolidColorBrush Color="#fed7aa"
+                     x:Key="orange200Color" />
+    <SolidColorBrush Color="#ffedd5"
+                     x:Key="orange100Color" />
+    <SolidColorBrush Color="#fff7ed"
+                     x:Key="orange50Color" />
+    
     <!--Teal colors-->
     <SolidColorBrush Color="#042f2e"
                      x:Key="teal950Color" />

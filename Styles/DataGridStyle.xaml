@@ -358,16 +358,16 @@
             <Trigger Property="IsMouseOver"
                      Value="True">
                 <Setter Property="Foreground"
-                        Value="{StaticResource slate900Color}" />
+                        Value="White" />
                 <Setter Property="Background"
-                        Value="{StaticResource blue700Color}" />
+                        Value="{StaticResource blue950Color}" />
             </Trigger>
             <Trigger Property="IsSelected"
                      Value="True">
                 <Setter Property="Foreground"
                         Value="White" />
                 <Setter Property="Background"
-                        Value="{StaticResource blue700Color}" />
+                        Value="{StaticResource blue950Color}" />
 
             </Trigger>
 
