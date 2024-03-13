@@ -10,6 +10,7 @@ namespace ExperimentalThingsUsingWPF.Views
     /// </summary>
     public partial class MaterialsView : UserControl
     {
+        private List<Material> _materials = new();
         public MaterialsView()
         {
             InitializeComponent();
@@ -18,32 +19,40 @@ namespace ExperimentalThingsUsingWPF.Views
         private void SearchTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             var searchBox = sender as TextBox;
-            if (searchBox.Text == "Search...")
-                searchBox.Text = "";
-
+            searchTextBlock.Visibility = Visibility.Collapsed;
         }
 
-        private void SearchTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            var searchBox = sender as TextBox;
-            if (string.IsNullOrWhiteSpace(searchBox.Text))
-                searchBox.Text = "Search...";
-        }
 
         private async void MaterialsView_Loaded(object sender, RoutedEventArgs e)
         {
-            materialsGrid.ItemsSource = await GetMaterials();
+            _materials = await GetMaterials();
+            materialsGrid.ItemsSource = _materials;
         }
 
-        private async Task<IEnumerable<Material>> GetMaterials()
+        private async Task<List<Material>> GetMaterials()
         {
             List<Material> materials = new();
             await Task.Run(() =>
             {
                 materials = DataProvider.GetMaterials();
             });
-            
+
             return materials;
         }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            materialsGrid.ItemsSource = _materials.Where(material => material.FullName.Contains(searchTextBox.Text));
+        }
+
+        private void SearchTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(searchTextBox.Text))
+            {
+                searchTextBlock.Visibility = Visibility.Visible;
+            }
+        }
+
+        
     }
 }

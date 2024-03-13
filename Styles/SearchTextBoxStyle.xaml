@@ -25,8 +25,7 @@
                 Value="5" />
         <Setter Property="VerticalAlignment"
                 Value="Center" />
-        <Setter Property="Text"
-                Value="Search..." />
+     
         <Style.Triggers>
             <Trigger Property="IsFocused"
                      Value="True">
