@@ -33,9 +33,7 @@
                          x:Name="searchTextBox"
                          GotFocus="SearchTextBox_GotFocus"
                          LostFocus="SearchTextBox_LostFocus"
-                         
                          Style="{StaticResource SearchTextBoxStyle}">
-
                 </TextBox>
             </Grid>
 
@@ -47,6 +45,7 @@
                     BorderThickness="0"
                     Click="SearchButton_Click" 
                     IsDefault="True"/>
+            
         </StackPanel>
 
         <Border CornerRadius="10"
@@ -58,8 +57,9 @@
                       ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}"
                       CellStyle="{DynamicResource DataGridCellStyle}"
                       RowStyle="{DynamicResource DataGridRowStyle}"
-                      x:Name="materialsGrid">
-
+                      x:Name="materialsGrid"
+                      >
+                
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Id}"
                                         ClipboardContentBinding="{x:Null}"

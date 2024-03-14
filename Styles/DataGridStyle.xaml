@@ -117,9 +117,10 @@
                             Padding="{TemplateBinding Padding}"
                             SnapsToDevicePixels="True">
                         <ScrollViewer x:Name="DG_ScrollViewer"
-                                      Focusable="false">
+                                      Focusable="false"
+                                      >
                             <ScrollViewer.Template>
-                                <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                                <ControlTemplate TargetType="{x:Type ScrollViewer}" >
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto" />
@@ -145,6 +146,7 @@
                                                                 Grid.Row="1" />
                                         <ScrollBar x:Name="PART_VerticalScrollBar"
                                                    Grid.Column="2"
+                                                         
                                                    Maximum="{TemplateBinding ScrollableHeight}"
                                                    Orientation="Vertical"
                                                    Grid.Row="1"
@@ -159,6 +161,7 @@
                                             </Grid.ColumnDefinitions>
                                             <ScrollBar x:Name="PART_HorizontalScrollBar"
                                                        Grid.Column="1"
+                                                       
                                                        Maximum="{TemplateBinding ScrollableWidth}"
                                                        Orientation="Horizontal"
                                                        Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
@@ -358,7 +361,7 @@
             <Trigger Property="IsMouseOver"
                      Value="True">
                 <Setter Property="Foreground"
-                        Value="White" />
+                        Value="{StaticResource slate400Color}" />
                 <Setter Property="Background"
                         Value="{StaticResource blue950Color}" />
             </Trigger>
