@@ -29,40 +29,27 @@
                 </Style.Triggers>
             </Style>
         </Border.Resources>
-        
+
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Right">
 
             <Button VerticalAlignment="Top"
                     Click="MinimizedButton_Click"
-                    Style="{StaticResource topButtonStyles}">
+                    Style="{StaticResource MaterialDesignFlatButton}">
 
-                <materialDesign:PackIcon Kind="WindowMinimize"
-                                         Foreground="White" />
+                <materialDesign:PackIcon Kind="WindowMinimize" />
 
             </Button>
             <Button VerticalAlignment="Top"
                     Click="MaximizedButton_Click"
-                    Style="{StaticResource topButtonStyles}">
-                <materialDesign:PackIcon Kind="SquareOutline"
-                                         Foreground="White" />
+                    Style="{StaticResource MaterialDesignFlatButton}">
+                <materialDesign:PackIcon Kind="SquareOutline" />
             </Button>
             <Button VerticalAlignment="Top"
-                    Click="CloseButton_Click">
-                <Button.Style>
-                    <Style BasedOn="{StaticResource topButtonStyles}"
-                           TargetType="Button">
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver"
-                                     Value="True">
-                                <Setter Property="Background"
-                                        Value="Red" />
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <materialDesign:PackIcon Kind="CloseBold"
-                                         Foreground="White" />
+                    Click="CloseButton_Click"
+                    Style="{StaticResource MaterialDesignFlatButton}">
+
+                <materialDesign:PackIcon Kind="CloseBold" />
             </Button>
 
         </StackPanel>

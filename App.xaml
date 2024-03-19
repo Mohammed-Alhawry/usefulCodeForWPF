@@ -2,10 +2,16 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ExperimentalThingsUsingWPF"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Inherit"
+                                             PrimaryColor="DeepPurple"
+                                             SecondaryColor="Blue" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/materialdesign3.defaults.xaml" />
+
                 <ResourceDictionary Source="/Styles/DashboredItemStyles.xaml" />
                 <ResourceDictionary Source="/Styles/ButtonStyles.xaml" />
                 <ResourceDictionary Source="/Styles/Colors.xaml" />
@@ -13,7 +19,6 @@
                 <ResourceDictionary Source="/Styles/TextBoxStyles.xaml" />
                 <ResourceDictionary Source="/Styles/ScrollBarStyles.xaml" />
                 <ResourceDictionary Source="/Styles/SearchTextBoxStyle.xaml" />
-                
                 <ResourceDictionary Source="/Styles/SearchButtonStyles.xaml" />
                 <ResourceDictionary Source="/Styles/DataGridStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
