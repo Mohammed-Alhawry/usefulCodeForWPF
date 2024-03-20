@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ExperimentalThingsUsingWPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:views="clr-namespace:ExperimentalThingsUsingWPF.Views"
+        xmlns:viewModels="clr-namespace:ExperimentalThingsUsingWPF.ViewModels"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
         Title="MainWindow"
@@ -46,148 +47,12 @@
             <views:NavbarView x:Name="navBarView"
                               Grid.Row="0" />
 
-            <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=menuButton, Path=IsChecked, Mode=TwoWay}"
-                                       Grid.Row="1">
+            <materialDesign:DrawerHost 
+                                       Grid.Row="1"
+                                       IsLeftDrawerOpen="{Binding IsLeftDrawerOpen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <materialDesign:DrawerHost.LeftDrawerContent>
-
                     <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}"
-                                      Grid.Column="1"
-                                      HorizontalAlignment="Right"
-                                      VerticalAlignment="Top"
-                                      Margin="16"
-                                      IsChecked="{Binding ElementName=menuButton, Path=IsChecked, Mode=TwoWay}" />
-
-                        <StackPanel>
-                            <Ellipse Width="80"
-                                     Height="80"
-                                     Stroke="{StaticResource cian800Color}"
-                                     StrokeThickness="2"
-                                     Margin="10 10 -20 10">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Images/dental.png" />
-                                </Ellipse.Fill>
-                            </Ellipse>
-
-                            <TreeView FontSize="20">
-
-                                <TreeViewItem>
-                                    <TreeViewItem.Header>
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Home"
-                                                                     Width="22"
-                                                                     Height="22"
-                                                                     VerticalAlignment="Center" />
-                                            <TextBlock Text="Home"
-                                                       Margin="16 0 0 0" />
-                                        </StackPanel>
-                                    </TreeViewItem.Header>
-                                </TreeViewItem>
-
-                                <TreeViewItem>
-                                    <TreeViewItem.Header>
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Chemist"
-                                                                     VerticalAlignment="Center"
-                                                                     Width="22"
-                                                                     Height="22" />
-                                            <TextBlock Text="Materials"
-                                                       Margin="16 0 0 0" />
-                                        </StackPanel>
-                                    </TreeViewItem.Header>
-                                    <TreeViewItem Header="Show" />
-                                    <TreeViewItem Header="Add" />
-                                </TreeViewItem>
-                                <TreeViewItem>
-                                    <TreeViewItem.Header>
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="UserTie"
-                                                                     VerticalAlignment="Center"
-                                                                     Width="22"
-                                                                     Height="22" />
-                                            <TextBlock Text="Employees"
-                                                       Margin="16 0 0 0" />
-                                        </StackPanel>
-                                    </TreeViewItem.Header>
-                                    <TreeViewItem Header="Show" />
-                                    <TreeViewItem Header="Add" />
-                                </TreeViewItem>
-                                <TreeViewItem>
-                                    <TreeViewItem.Header>
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Warehouse"
-                                                                     VerticalAlignment="Center"
-                                                                     Width="22"
-                                                                     Height="22" />
-                                            <TextBlock Text="Warehouse"
-                                                       Margin="16 0 0 0" />
-                                        </StackPanel>
-                                    </TreeViewItem.Header>
-                                    <TreeViewItem Header="Show" />
-                                    <TreeViewItem Header="Add" />
-                                </TreeViewItem>
-                                <TreeViewItem>
-                                    <TreeViewItem.Header>
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Text"
-                                                                     VerticalAlignment="Center"
-                                                                     Width="22"
-                                                                     Height="22" />
-                                            <TextBlock Text="Reports"
-                                                       Margin="16 0 0 0" />
-                                        </StackPanel>
-                                    </TreeViewItem.Header>
-                                    <TreeViewItem Header="Show" />
-                                    <TreeViewItem Header="Add" />
-                                </TreeViewItem>
-                                <TreeViewItem>
-                                    <TreeViewItem.Header>
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Users"
-                                                                     VerticalAlignment="Center"
-                                                                     Width="22"
-                                                                     Height="22" />
-                                            <TextBlock Text="Users"
-                                                       Margin="16 0 0 0" />
-                                        </StackPanel>
-                                    </TreeViewItem.Header>
-                                    <TreeViewItem Header="Show" />
-                                    <TreeViewItem Header="Add" />
-                                </TreeViewItem>
-                                <TreeViewItem>
-                                    <TreeViewItem.Header>
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Tooth"
-                                                                     VerticalAlignment="Center"
-                                                                     Width="22"
-                                                                     Height="22" />
-                                            <TextBlock Text="Clinics"
-                                                       Margin="16 0 0 0" />
-                                        </StackPanel>
-                                    </TreeViewItem.Header>
-                                    <TreeViewItem Header="Show" />
-                                    <TreeViewItem Header="Add" />
-                                </TreeViewItem>
-                                <TreeViewItem>
-                                    <TreeViewItem.Header>
-                                        <StackPanel Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="AttachMoney"
-                                                                     VerticalAlignment="Center"
-                                                                     Width="22"
-                                                                     Height="22" />
-                                            <TextBlock Text="Bills"
-                                                       Margin="16 0 0 0" />
-                                        </StackPanel>
-                                    </TreeViewItem.Header>
-                                    <TreeViewItem Header="Show" />
-                                    <TreeViewItem Header="Add" />
-                                </TreeViewItem>
-                            </TreeView>
-                        </StackPanel>
+                        <views:DashboredView />
                     </Grid>
                 </materialDesign:DrawerHost.LeftDrawerContent>
 
@@ -197,36 +62,7 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <materialDesign:ColorZone Padding="16"
-                                              Mode="PrimaryMid">
-                        <DockPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        DockPanel.Dock="Right">
-                                <TextBlock Text="Mohammed Ghalab"
-                                           VerticalAlignment="Center" />
-                                <Ellipse Stroke="{StaticResource blue400Color}"
-                                         StrokeThickness="3"
-                                         Width="50"
-                                         Height="50"
-                                         Margin="5 0 0 0">
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="/Images/user1.jpg" />
-                                    </Ellipse.Fill>
-                                </Ellipse>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        DockPanel.Dock="Left">
-
-                                <ToggleButton x:Name="menuButton"
-                                              Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
-                                <TextBlock Text="Dental Name"
-                                           Margin="16 0 0 0"
-                                           VerticalAlignment="Center" />
-                            </StackPanel>
-
-                            <Label Visibility="Collapsed" />
-                        </DockPanel>
-                    </materialDesign:ColorZone>
+                    <views:HeaderNavbar />
 
                     <ContentControl Grid.Row="1"
                                     x:Name="contentControl" />

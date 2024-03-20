@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="ExperimentalThingsUsingWPF.Views.HeaderNavbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <materialDesign:ColorZone Padding="16"
+                                  Mode="PrimaryMid">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Right">
+                    <TextBlock Text="Mohammed Ghalab"
+                               VerticalAlignment="Center" />
+                    <Ellipse Stroke="{StaticResource cian600Color}"
+                             StrokeThickness="3"
+                             Width="50"
+                             Height="50"
+                             Margin="5 0 0 0">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Images/user1.jpg" />
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Left">
+
+                    <ToggleButton 
+                                  IsChecked="{Binding IsLeftDrawerOpen}"
+                                  Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+                    <TextBlock Text="Dental Name"
+                               Margin="16 0 0 0"
+                               VerticalAlignment="Center" />
+                </StackPanel>
+
+                <Label Visibility="Collapsed" />
+            </DockPanel>
+        </materialDesign:ColorZone>
+
+    </Grid>
+</UserControl>
