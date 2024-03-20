@@ -10,13 +10,15 @@ namespace ExperimentalThingsUsingWPF.Views
     /// </summary>
     public partial class DashboredView : UserControl
     {
-
-        
+        public MainWindow MainWindow { get; } = (MainWindow)Application.Current.MainWindow;
         public DashboredView()
         {
-            InitializeComponent();
-        
+            InitializeComponent();   
         }
 
+        private void Materials_OnSelected(object sender, RoutedEventArgs e)
+        {
+            MainWindow.contentControl.Content = new MaterialsView();
+        }
     }
 }

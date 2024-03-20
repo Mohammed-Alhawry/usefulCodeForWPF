@@ -5,78 +5,85 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Views"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-             xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
              Loaded="MaterialsView_Loaded">
-    <Grid Margin="10">
+    <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal">
-            <fa:IconImage Icon="Search"
-                          Height="20"
-                          Width="20"
-                          Foreground="{StaticResource blue700Color}" />
-            <Grid>
-
-                <TextBlock Text="Search..."
-                           x:Name="searchTextBlock"
-                           FontWeight="Medium" FontSize="14"
-                           Foreground="{StaticResource slate500Color}"
-                           Margin="7"
-                           />
-                <TextBox Width="300"
-                         x:Name="searchTextBox"
-                         GotFocus="SearchTextBox_GotFocus"
-                         LostFocus="SearchTextBox_LostFocus"
-                         Style="{StaticResource SearchTextBoxStyle}">
-                </TextBox>
-            </Grid>
-
+            <materialDesign:PackIcon Kind="Search"
+                                     VerticalAlignment="Center"
+                                     Height="25"
+                                     Width="25"
+                                     Foreground="{Binding ElementName=searchTextBox, Path=BorderBrush}" />
+            <TextBox x:Name="searchTextBox"
+                     VerticalAlignment="Center"
+                     Width="200"
+                     materialDesign:HintAssist.Hint="Search..."
+                     TextWrapping="Wrap" />
+            <TextBlock Text="Filter By:"
+                       VerticalAlignment="Center"
+                       Margin="10 0" />
+            <ComboBox Style="{StaticResource MaterialDesignComboBox}"
+                      VerticalAlignment="Center"
+                      MinWidth="20">
+                <ComboBoxItem Content="All" />
+                <ComboBoxItem Content="Id" />
+                <ComboBoxItem Content="Short Name"
+                              IsSelected="True" />
+                <ComboBoxItem Content="Long Name" />
+            </ComboBox>
             <Button Content="Search"
+                    VerticalAlignment="Center"
                     Cursor="Hand"
-                    Style="{StaticResource SearchButtonStyle}"
-                    FontSize="12"
+                    Margin="10 0 0 0"
+                    materialDesign:ButtonAssist.CornerRadius="15"
                     FontFamily="Montserrat"
-                    BorderThickness="0"
-                    Click="SearchButton_Click" 
-                    IsDefault="True"/>
-            
+                    Click="SearchButton_Click"
+                    IsDefault="True" />
         </StackPanel>
 
-        <Border CornerRadius="10"
-                Grid.Row="1"
-                Background="{StaticResource blue900Color}"
-                Margin="10"
-                Padding="10">
-            <DataGrid Style="{DynamicResource DataGridStyle}"
-                      ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}"
-                      CellStyle="{DynamicResource DataGridCellStyle}"
-                      RowStyle="{DynamicResource DataGridRowStyle}"
-                      x:Name="materialsGrid"
-                      >
-                
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Id}"
-                                        ClipboardContentBinding="{x:Null}"
-                                        Header="Id" />
-                    <DataGridTextColumn Binding="{Binding ShortName}"
-                                        ClipboardContentBinding="{x:Null}"
-                                        Header="Short Name" />
-                    <DataGridTextColumn Binding="{Binding FullName}"
-                                        ClipboardContentBinding="{x:Null}"
-                                        Header="Full Name" />
-                    <DataGridTextColumn Binding="{Binding Price}"
-                                        ClipboardContentBinding="{x:Null}"
-                                        Header="Price" />
-                </DataGrid.Columns>
+        <DataGrid Grid.Row="1"
+                  Margin="0 30"
+                  x:Name="materialsGrid"
+                  AutoGenerateColumns="False"
+                  ColumnWidth="*"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  CanUserReorderColumns="False">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell"
+                       BasedOn="{StaticResource MaterialDesignDataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected"
+                                 Value="True">
+                            <Setter Property="BorderThickness"
+                                    Value="0" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
 
-            </DataGrid>
-        </Border>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}"
+                                    Header="Id" />
+                <DataGridTextColumn Binding="{Binding ShortName}"
+                                    Header="Short Name" />
+                <DataGridTextColumn Binding="{Binding FullName}"
+                                    Header="Full Name" />
+
+            </DataGrid.Columns>
+
+        </DataGrid>
 
     </Grid>
 </UserControl>

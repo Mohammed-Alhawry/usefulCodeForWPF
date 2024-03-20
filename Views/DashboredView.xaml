@@ -44,7 +44,7 @@
                     </TreeViewItem.Header>
                 </TreeViewItem>
 
-                <TreeViewItem>
+                <TreeViewItem Selected="Materials_OnSelected">
                     <TreeViewItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Chemist"

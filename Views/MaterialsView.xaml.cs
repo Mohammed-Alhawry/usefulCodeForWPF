@@ -16,12 +16,7 @@ namespace ExperimentalThingsUsingWPF.Views
             InitializeComponent();
         }
 
-        private void SearchTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            var searchBox = sender as TextBox;
-            searchTextBlock.Visibility = Visibility.Collapsed;
-        }
-
+        
 
         private async void MaterialsView_Loaded(object sender, RoutedEventArgs e)
         {
@@ -45,14 +40,7 @@ namespace ExperimentalThingsUsingWPF.Views
             materialsGrid.ItemsSource = _materials.Where(material => material.FullName.Contains(searchTextBox.Text));
         }
 
-        private void SearchTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(searchTextBox.Text))
-            {
-                searchTextBlock.Visibility = Visibility.Visible;
-            }
-        }
-
+        
         
     }
 }
