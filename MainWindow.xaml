@@ -21,7 +21,8 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
-        FontFamily="{materialDesign:MaterialDesignFont}">
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        Style="{DynamicResource MaterialDesignWindow}">
 
     <Border Background="{DynamicResource MaterialDesignPaper}"
             CornerRadius="3"

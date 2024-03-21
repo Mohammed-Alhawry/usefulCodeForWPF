@@ -14,57 +14,51 @@ public static class DataProvider
             {
                 Id = 1,
                 ShortName = "ALK",
-                FullName = "laskdflsdkf",
-                Price = 1928.1m
+                FullName = "laskdflsdkf"
             }
             ,new MaterialModel
             {
                 Id = 2,
                 ShortName = "SSsdfsdfK",
-                FullName = "laskdflsdsdfasdfasdfkf",
-                Price = 1928.1m
+                FullName = "laskdflsdsdfasdfasdfkf"
+
             }
             ,new MaterialModel
             {
                 Id = 3,
                 ShortName = "AL",
-                FullName = "lasskdflsdkf",
-                Price = 1928.1m
+                FullName = "lasskdflsdkf"
+
             },
             new MaterialModel
             {
                 Id = 4,
                 ShortName = "ALKsd",
-                FullName = "laskdfsdflsdkf",
-                Price = 112112128.1m
+                FullName = "laskdfsdflsdkf"
             },
             new MaterialModel
             {
                 Id = 1,
                 ShortName = "ALK",
-                FullName = "laskdflsdkf",
-                Price = 1928.1m
+                FullName = "laskdflsdkf"
             }
             ,new MaterialModel
             {
                 Id = 2,
                 ShortName = "SSsdfsdfK",
-                FullName = "laskdflsdsdfasdfasdfkf",
-                Price = 1928.1m
+                FullName = "laskdflsdsdfasdfasdfkf"
             }
             ,new MaterialModel
             {
                 Id = 3,
                 ShortName = "AL",
-                FullName = "lasskdflsdkf",
-                Price = 1928.1m
+                FullName = "lasskdflsdkf"
             },
             new MaterialModel
             {
                 Id = 4,
                 ShortName = "ALKsd",
-                FullName = "laskdfsdflsdkf",
-                Price = 112112128.1m
+                FullName = "laskdfsdflsdkf"
             }
         };
     }

@@ -9,13 +9,13 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <materialDesign:ColorZone Padding="16"
-                                  Mode="PrimaryMid">
+                                  Mode="SecondaryDark">
             <DockPanel>
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Right">
                     <TextBlock Text="Mohammed Ghalab"
                                VerticalAlignment="Center" />
-                    <Ellipse Stroke="{StaticResource cian600Color}"
+                    <Ellipse Stroke="{StaticResource blue500Color}"
                              StrokeThickness="3"
                              Width="50"
                              Height="50"

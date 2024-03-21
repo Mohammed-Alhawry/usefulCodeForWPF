@@ -11,44 +11,37 @@
 
     <Border CornerRadius="0 10 10 0"
             Padding="0 3.5 0 0">
-        <Border.Resources>
-            <Style BasedOn="{StaticResource ButtonStyle}"
-                   x:Key="topButtonStyles"
-                   TargetType="Button">
-                <Setter Property="Height"
-                        Value="40" />
-                <Setter Property="Width"
-                        Value="50" />
-
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver"
-                             Value="True">
-                        <Setter Property="Background"
-                                Value="{StaticResource SecondaryColor}" />
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-        </Border.Resources>
 
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Right">
 
             <Button VerticalAlignment="Top"
                     Click="MinimizedButton_Click"
-                    Style="{StaticResource MaterialDesignFlatButton}">
+                    Style="{StaticResource MaterialDesignFlatDarkButton}">
 
                 <materialDesign:PackIcon Kind="WindowMinimize" />
 
             </Button>
             <Button VerticalAlignment="Top"
                     Click="MaximizedButton_Click"
-                    Style="{StaticResource MaterialDesignFlatButton}">
+                    Style="{StaticResource MaterialDesignFlatDarkButton}">
                 <materialDesign:PackIcon Kind="SquareOutline" />
             </Button>
             <Button VerticalAlignment="Top"
-                    Click="CloseButton_Click"
-                    Style="{StaticResource MaterialDesignFlatButton}">
-
+                    
+                    Click="CloseButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button"
+                           BasedOn="{StaticResource MaterialDesignFlatDarkButton}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Foreground"
+                                        Value="Red" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
                 <materialDesign:PackIcon Kind="CloseBold" />
             </Button>
 
