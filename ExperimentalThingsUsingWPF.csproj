@@ -19,6 +19,7 @@
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+    <PackageReference Include="ThemeSwitch" Version="1.0.0.8" />
     <PackageReference Include="WPF-UI" Version="3.0.0" />
   </ItemGroup>
 

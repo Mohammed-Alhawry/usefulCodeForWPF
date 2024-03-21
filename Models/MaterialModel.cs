@@ -1,6 +1,6 @@
 ﻿namespace ExperimentalThingsUsingWPF.Models;
 
-public class Material
+public class MaterialModel
 {
     public int Id { get; set; }
     public string ShortName { get; set; }

@@ -10,7 +10,7 @@ namespace ExperimentalThingsUsingWPF.Views
     /// </summary>
     public partial class MaterialsView : UserControl
     {
-        private List<Material> _materials = new();
+        private List<MaterialModel> _materials = new();
         public MaterialsView()
         {
             InitializeComponent();
@@ -24,9 +24,9 @@ namespace ExperimentalThingsUsingWPF.Views
             materialsGrid.ItemsSource = _materials;
         }
 
-        private async Task<List<Material>> GetMaterials()
+        private async Task<List<MaterialModel>> GetMaterials()
         {
-            List<Material> materials = new();
+            List<MaterialModel> materials = new();
             await Task.Run(() =>
             {
                 materials = DataProvider.GetMaterials();
@@ -39,8 +39,5 @@ namespace ExperimentalThingsUsingWPF.Views
         {
             materialsGrid.ItemsSource = _materials.Where(material => material.FullName.Contains(searchTextBox.Text));
         }
-
-        
-        
     }
 }
