@@ -196,7 +196,8 @@
         </Setter>
     </Style>
     <Style
-           TargetType="{x:Type ScrollBar}">
+           TargetType="{x:Type ScrollBar}"
+        x:Key="CustomScrollBarStyle">
         <Setter Property="Stylus.IsPressAndHoldEnabled"
                 Value="false" />
         <Setter Property="Stylus.IsFlicksEnabled"

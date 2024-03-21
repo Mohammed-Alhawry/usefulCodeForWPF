@@ -21,8 +21,10 @@
                       VerticalAlignment="Top"
                       Margin="16"
                       IsChecked="{Binding IsLeftDrawerOpen}" />
+                      
         <StackPanel Grid.ColumnSpan="2">
             <Ellipse Width="80"
+                     FlowDirection="LeftToRight"
                      Height="80"
                      Stroke="{StaticResource blue400Color}"
                      StrokeThickness="2"
