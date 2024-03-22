@@ -20,8 +20,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        Style="{DynamicResource MaterialDesignWindow}"
-        >
+        Style="{DynamicResource MaterialDesignWindow}">
 
     <Border Background="{DynamicResource MaterialDesignPaper}"
             CornerRadius="3"
@@ -48,8 +47,7 @@
             <views:NavbarView x:Name="navBarView"
                               Grid.Row="0" />
 
-            <materialDesign:DrawerHost 
-                                       Grid.Row="1"
+            <materialDesign:DrawerHost Grid.Row="1"
                                        IsLeftDrawerOpen="{Binding IsLeftDrawerOpen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <materialDesign:DrawerHost.LeftDrawerContent>
                     <Grid>
@@ -63,9 +61,10 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
 
-                    <views:HeaderNavbar Grid.Row="0"/>
+                    <views:HeaderNavbar Grid.Row="0" />
 
                     <ContentControl Grid.Row="1"
+                                    Margin="20"
                                     x:Name="contentControl" />
 
                 </Grid>

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Views"
+             xmlns:resx="clr-namespace:ExperimentalThingsUsingWPF.Translations"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -13,7 +14,7 @@
             <DockPanel>
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Right">
-                    <TextBlock Text="Mohammed Ghalab"
+                    <TextBlock Text="{x:Static resx:Translations.MohammedGhalab}"
                                VerticalAlignment="Center" />
                     <Ellipse Stroke="{StaticResource blue500Color}"
                              StrokeThickness="3"
@@ -31,7 +32,7 @@
                     <ToggleButton 
                                   IsChecked="{Binding IsLeftDrawerOpen}"
                                   Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
-                    <TextBlock Text="Dental Name"
+                    <TextBlock Text="{x:Static resx:Translations.AppName}"
                                Margin="16 0 0 0"
                                VerticalAlignment="Center" />
                 </StackPanel>

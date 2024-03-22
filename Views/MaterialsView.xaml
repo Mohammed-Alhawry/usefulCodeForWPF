@@ -4,19 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Views"
-             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:resx="clr-namespace:ExperimentalThingsUsingWPF.Translations"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
              Loaded="MaterialsView_Loaded">
-    <Grid Margin="20">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal">
+        <DockPanel>
             <materialDesign:PackIcon Kind="Search"
                                      VerticalAlignment="Center"
                                      Height="25"
@@ -25,29 +25,35 @@
             <TextBox x:Name="searchTextBox"
                      VerticalAlignment="Center"
                      Width="200"
-                     materialDesign:HintAssist.Hint="Search..."
+                     materialDesign:HintAssist.Hint="{x:Static resx:Translations.SearchTextBoxHint}"
                      TextWrapping="Wrap" />
-            <TextBlock Text="Filter By:"
+            <TextBlock Text="{x:Static resx:Translations.FilterBy}"
                        VerticalAlignment="Center"
                        Margin="10 0" />
             <ComboBox Style="{StaticResource MaterialDesignComboBox}"
                       VerticalAlignment="Center"
                       MinWidth="20">
-                <ComboBoxItem Content="All" />
-                <ComboBoxItem Content="Id" />
-                <ComboBoxItem Content="Short Name"
+                <ComboBoxItem Content="{x:Static resx:Translations.All}" />
+                <ComboBoxItem Content="{x:Static resx:Translations.Id}" />
+                <ComboBoxItem Content="{x:Static resx:Translations.ShortName}"
                               IsSelected="True" />
-                <ComboBoxItem Content="Long Name" />
+                <ComboBoxItem Content="{x:Static resx:Translations.FullName}" />
             </ComboBox>
-            <Button Content="Search"
+            <Button Content="{x:Static resx:Translations.Search}"
                     VerticalAlignment="Center"
                     Cursor="Hand"
                     Margin="10 0 0 0"
                     materialDesign:ButtonAssist.CornerRadius="15"
-                    FontFamily="Montserrat"
                     Click="SearchButton_Click"
                     IsDefault="True" />
-        </StackPanel>
+
+            <Button Content="{x:Static resx:Translations.AddMaterial}"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    HorizontalAlignment="Right"
+                    materialDesign:ButtonAssist.CornerRadius="15" />
+
+        </DockPanel>
 
         <DataGrid Grid.Row="1"
                   Margin="0 30"
@@ -75,11 +81,11 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}"
-                                    Header="Id" />
+                                    Header="{x:Static resx:Translations.Id}" />
                 <DataGridTextColumn Binding="{Binding ShortName}"
-                                    Header="Short Name" />
+                                    Header="{x:Static resx:Translations.ShortName}" />
                 <DataGridTextColumn Binding="{Binding FullName}"
-                                    Header="Full Name" />
+                                    Header="{x:Static resx:Translations.FullName}" />
 
             </DataGrid.Columns>
 
