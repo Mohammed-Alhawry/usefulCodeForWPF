@@ -14,12 +14,15 @@ namespace ExperimentalThingsUsingWPF.Views
         public MainWindow MainWindow { get; } = (MainWindow)Application.Current.MainWindow;
         public DashboredView()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
         private void Materials_OnSelected(object sender, RoutedEventArgs e)
         {
-            MainWindow.contentControl.Content = new MaterialsView();
+            var source = (TreeViewItem)e.Source;
+            var header = source.Header.ToString();
+            if (header != "Add")
+                MainWindow.contentControl.Content = new MaterialsView();
         }
 
         private void ThemeSwitch_OnClick(object sender, RoutedEventArgs e)
@@ -34,5 +37,7 @@ namespace ExperimentalThingsUsingWPF.Views
 
             paletteHelper.SetTheme(theme);
         }
+
+
     }
 }

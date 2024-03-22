@@ -86,9 +86,7 @@
                                     Header="{x:Static resx:Translations.ShortName}" />
                 <DataGridTextColumn Binding="{Binding FullName}"
                                     Header="{x:Static resx:Translations.FullName}" />
-
             </DataGrid.Columns>
-
         </DataGrid>
 
     </Grid>
