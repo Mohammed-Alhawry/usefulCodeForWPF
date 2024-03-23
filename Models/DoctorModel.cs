@@ -1,8 +1,11 @@
-﻿namespace ExperimentalThingsUsingWPF.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
-public class DoctorModel
+namespace ExperimentalThingsUsingWPF.Models;
+
+
+public class DoctorModel : PersonModel
 {
-    public int PersonId { get; set; }
     public int ClinicId { get; set; }
 }
 
