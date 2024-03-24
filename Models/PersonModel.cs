@@ -16,6 +16,5 @@ public class PersonModel
     public GenderType Gender { get; set; }
     [Required]
     public string Address { get; set; }
-    [Required]
-    public ObservableCollection<PersonContactModel> Contacts { get; set; }
+ 
 }

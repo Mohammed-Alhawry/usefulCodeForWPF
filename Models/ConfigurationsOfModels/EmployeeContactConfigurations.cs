@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace ExperimentalThingsUsingWPF.Models.ConfigurationsOfModels;
 
-public class PersonContactConfigurations : IEntityTypeConfiguration<PersonContactModel>
+public class EmployeeContactConfigurations : IEntityTypeConfiguration<EmployeeContactModel>
 {
-    public void Configure(EntityTypeBuilder<PersonContactModel> builder)
+    public void Configure(EntityTypeBuilder<EmployeeContactModel> builder)
     {
-        builder.HasOne<PersonModel>(e => e.Person)
+        builder.HasOne<EmployeeModel>(e => e.Employee)
                .WithMany(s => s.Contacts)
-               .HasForeignKey(e => e.PersonId)
+               .HasForeignKey(e => e.EmployeeId)
                .HasPrincipalKey(s => s.Id);
         
     }

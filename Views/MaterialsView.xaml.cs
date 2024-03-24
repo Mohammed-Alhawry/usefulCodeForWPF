@@ -1,5 +1,6 @@
 ﻿using ExperimentalThingsUsingWPF.Data;
 using ExperimentalThingsUsingWPF.Models;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,7 +11,7 @@ namespace ExperimentalThingsUsingWPF.Views
     /// </summary>
     public partial class MaterialsView : UserControl
     {
-        private List<MaterialModel> _materials = new();
+        private ObservableCollection<MaterialModel> _materials = new();
         public MaterialsView()
         {
             InitializeComponent();
@@ -24,9 +25,9 @@ namespace ExperimentalThingsUsingWPF.Views
             materialsGrid.ItemsSource = _materials;
         }
 
-        private async Task<List<MaterialModel>> GetMaterials()
+        private async Task<ObservableCollection<MaterialModel>> GetMaterials()
         {
-            List<MaterialModel> materials = new();
+            ObservableCollection<MaterialModel> materials = new();
             await Task.Run(() =>
             {
                 materials = DataProvider.GetMaterials();

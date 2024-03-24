@@ -2,11 +2,10 @@
 
 namespace ExperimentalThingsUsingWPF.Models;
 
-public class PersonContactModel
-
+public class DoctorContactModel
 {
-    public int PersonId { get; set; }
-    public PersonModel Person { get; set; }
+    public int DoctorId { get; set; }
+    public DoctorModel Doctor { get; set; }
     [Required]
     public string ContactInfo { get; set; }
     public ContactType ContactType { get; set; }
