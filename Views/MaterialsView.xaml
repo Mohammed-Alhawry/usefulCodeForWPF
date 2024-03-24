@@ -33,8 +33,7 @@
             <ComboBox x:Name="filterByComboBox"
                       Style="{StaticResource MaterialDesignComboBox}"
                       VerticalAlignment="Center"
-                      MinWidth="20"
-                      >
+                      MinWidth="20">
                 <ComboBoxItem Content="{x:Static resx:Translations.All}" />
                 <ComboBoxItem Content="{x:Static resx:Translations.Id}" />
                 <ComboBoxItem Content="{x:Static resx:Translations.ShortName}"

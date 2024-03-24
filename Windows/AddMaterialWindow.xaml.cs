@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExperimentalThingsUsingWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +23,7 @@ namespace ExperimentalThingsUsingWPF.Windows
         public AddMaterialWindow()
         {
             InitializeComponent();
-        }
-
-        private void SaveButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            DataContext = new AddMaterialViewModel();
         }
     }
 }

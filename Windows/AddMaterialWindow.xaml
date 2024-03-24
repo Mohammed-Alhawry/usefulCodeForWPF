@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Windows"
+        xmlns:viewModels="clr-namespace:ExperimentalThingsUsingWPF.ViewModels"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         SizeToContent="WidthAndHeight"
@@ -14,24 +15,28 @@
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource MaterialDesignWindow}">
+
     <Border CornerRadius="0"
             Background="{StaticResource MaterialDesignPaper}"
-            Padding="10">
+            Padding="5">
         <StackPanel>
             <TextBlock HorizontalAlignment="Center"
                        FontSize="15"
                        FontWeight="DemiBold">Adding Material</TextBlock>
 
-            <Label>Short Name</Label>
+            <Label Margin="0 16 0 0">Short Name</Label>
             <TextBox TextWrapping="Wrap"
                      Width="300"
-                     Margin="5 0"></TextBox>
+                     Margin="0 0 0 16"
+                     materialDesign:ValidationAssist.FontSize="13"
+                     Text="{Binding MaterialObject.ShortName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            
             <Label Margin="0 16 0 0">Full Name</Label>
             <TextBox Width="300"
                      TextWrapping="Wrap"
-                     Margin="5 0"></TextBox>
+                     Margin="0 0 0 16"
+                     materialDesign:ValidationAssist.FontSize="13"
+                     Text="{Binding MaterialObject.FullName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
             <Grid Margin="0 16 0 0">
                 <Grid.ColumnDefinitions>
@@ -40,13 +45,14 @@
                 </Grid.ColumnDefinitions>
                 <Button Content="Save"
                         HorizontalAlignment="Center"
-                        IsDefault="True" Click="SaveButton_OnClick"/>
+                        IsDefault="True"
+                        Command="{Binding SaveMaterialCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
                 <Button Content="Cancel"
                         Grid.Column="1"
                         HorizontalAlignment="Center"
                         IsCancel="True" />
             </Grid>
-
         </StackPanel>
 
     </Border>
