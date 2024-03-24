@@ -1,0 +1,53 @@
+﻿<Window x:Class="ExperimentalThingsUsingWPF.Windows.AddMaterialWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MaterialDesignWindow}">
+    <Border CornerRadius="0"
+            Background="{StaticResource MaterialDesignPaper}"
+            Padding="10">
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Center"
+                       FontSize="15"
+                       FontWeight="DemiBold">Adding Material</TextBlock>
+
+            <Label>Short Name</Label>
+            <TextBox TextWrapping="Wrap"
+                     Width="300"
+                     Margin="5 0"></TextBox>
+
+            
+            <Label Margin="0 16 0 0">Full Name</Label>
+            <TextBox Width="300"
+                     TextWrapping="Wrap"
+                     Margin="5 0"></TextBox>
+
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Content="Save"
+                        HorizontalAlignment="Center"
+                        IsDefault="True" Click="SaveButton_OnClick"/>
+                <Button Content="Cancel"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        IsCancel="True" />
+            </Grid>
+
+        </StackPanel>
+
+    </Border>
+</Window>

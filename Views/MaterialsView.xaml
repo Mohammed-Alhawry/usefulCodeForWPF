@@ -30,9 +30,11 @@
             <TextBlock Text="{x:Static resx:Translations.FilterBy}"
                        VerticalAlignment="Center"
                        Margin="10 0" />
-            <ComboBox Style="{StaticResource MaterialDesignComboBox}"
+            <ComboBox x:Name="filterByComboBox"
+                      Style="{StaticResource MaterialDesignComboBox}"
                       VerticalAlignment="Center"
-                      MinWidth="20">
+                      MinWidth="20"
+                      >
                 <ComboBoxItem Content="{x:Static resx:Translations.All}" />
                 <ComboBoxItem Content="{x:Static resx:Translations.Id}" />
                 <ComboBoxItem Content="{x:Static resx:Translations.ShortName}"
@@ -51,7 +53,8 @@
                     VerticalAlignment="Center"
                     Cursor="Hand"
                     HorizontalAlignment="Right"
-                    materialDesign:ButtonAssist.CornerRadius="15" />
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    Click="AddMaterialButton_OnClick" />
 
         </DockPanel>
 

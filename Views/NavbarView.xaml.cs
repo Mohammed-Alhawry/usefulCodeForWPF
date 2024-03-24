@@ -35,7 +35,7 @@ namespace ExperimentalThingsUsingWPF.Views
                 MainWindow.WindowState = WindowState.Normal;
             else
             {
-                MainWindow.WindowState = WindowState.Maximized;   
+                MainWindow.WindowState = WindowState.Maximized;
             }
         }
     }
