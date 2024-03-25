@@ -1,5 +1,6 @@
 ﻿// Ignore Spelling: Dashbored
 
+using ExperimentalThingsUsingWPF.Windows;
 using MaterialDesignThemes.Wpf;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,10 +20,10 @@ namespace ExperimentalThingsUsingWPF.Views
 
         private void Materials_OnSelected(object sender, RoutedEventArgs e)
         {
-            var source = (TreeViewItem)e.Source;
-            var header = source.Header.ToString();
-            if (header != "Add")
+            var materialsView = MainWindow?.contentControl?.Content as MaterialsView;
+            if (materialsView is null)
                 MainWindow.contentControl.Content = new MaterialsView();
+
         }
 
         private void ThemeSwitch_OnClick(object sender, RoutedEventArgs e)
@@ -36,8 +37,19 @@ namespace ExperimentalThingsUsingWPF.Views
                 theme.SetLightTheme();
 
             paletteHelper.SetTheme(theme);
+
         }
 
+        private void Materials_ShowButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var materialsView = MainWindow?.contentControl?.Content as MaterialsView;
+            if (materialsView is null)
+                MainWindow.contentControl.Content = new MaterialsView();
+        }
 
+        private void Materials_AddButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            new AddMaterialWindow().ShowDialog();
+        }
     }
 }

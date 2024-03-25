@@ -10,6 +10,17 @@
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button"
+               BasedOn="{StaticResource MaterialDesignFlatDarkBgButton}">
+            <Setter Property="FontSize"
+                    Value="{Binding RelativeSource={RelativeSource AncestorType=TreeViewItem}, Path=FontSize}" />
+            <Setter Property="FontFamily"
+                    Value="{Binding RelativeSource={RelativeSource AncestorType=TreeViewItem}, Path=FontFamily}" />
+            <Setter Property="FontWeight"
+                    Value="{Binding RelativeSource={RelativeSource AncestorType=TreeViewItem}, Path=FontWeight}" />
+        </Style>
+    </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto"
                   HorizontalScrollBarVisibility="Auto">
 
@@ -67,8 +78,16 @@
                                            Margin="16 0 0 0" />
                             </StackPanel>
                         </TreeViewItem.Header>
-                        <TreeViewItem Header="{x:Static resx:Translations.Show}" />
-                        <TreeViewItem Header="{x:Static resx:Translations.Add}" />
+
+                        <Button Content="{x:Static resx:Translations.Show}"
+                                Click="Materials_ShowButton_OnClick" />
+                        <Button Click="Materials_AddButton_OnClick">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{x:Static resx:Translations.Add}" />
+                                <TextBlock Text=" Material" />
+                            </StackPanel>
+                        </Button>
+
                     </TreeViewItem>
                     <TreeViewItem>
                         <TreeViewItem.Header>
@@ -81,8 +100,9 @@
                                            Margin="16 0 0 0" />
                             </StackPanel>
                         </TreeViewItem.Header>
-                        <TreeViewItem Header="{x:Static resx:Translations.Show}" />
-                        <TreeViewItem Header="{x:Static resx:Translations.Add}" />
+                        <Button Content="{x:Static resx:Translations.Show}" />
+                        <Button Content="{x:Static resx:Translations.Add}" />
+
                     </TreeViewItem>
                     <TreeViewItem>
                         <TreeViewItem.Header>
@@ -95,8 +115,9 @@
                                            Margin="16 0 0 0" />
                             </StackPanel>
                         </TreeViewItem.Header>
-                        <TreeViewItem Header="{x:Static resx:Translations.Show}" />
-                        <TreeViewItem Header="{x:Static resx:Translations.Add}" />
+                        <Button Content="{x:Static resx:Translations.Show}" />
+                        <Button Content="{x:Static resx:Translations.Add}" />
+
                     </TreeViewItem>
                     <TreeViewItem>
                         <TreeViewItem.Header>
@@ -109,8 +130,9 @@
                                            Margin="16 0 0 0" />
                             </StackPanel>
                         </TreeViewItem.Header>
-                        <TreeViewItem Header="{x:Static resx:Translations.Show}" />
-                        <TreeViewItem Header="{x:Static resx:Translations.Add}" />
+                        <Button Content="{x:Static resx:Translations.Show}" />
+                        <Button Content="{x:Static resx:Translations.Add}" />
+
                     </TreeViewItem>
                     <TreeViewItem>
                         <TreeViewItem.Header>
@@ -123,8 +145,9 @@
                                            Margin="16 0 0 0" />
                             </StackPanel>
                         </TreeViewItem.Header>
-                        <TreeViewItem Header="{x:Static resx:Translations.Show}" />
-                        <TreeViewItem Header="{x:Static resx:Translations.Add}" />
+                        <Button Content="{x:Static resx:Translations.Show}" />
+                        <Button Content="{x:Static resx:Translations.Add}" />
+
                     </TreeViewItem>
                     <TreeViewItem>
                         <TreeViewItem.Header>
@@ -137,8 +160,9 @@
                                            Margin="16 0 0 0" />
                             </StackPanel>
                         </TreeViewItem.Header>
-                        <TreeViewItem Header="{x:Static resx:Translations.Show}" />
-                        <TreeViewItem Header="{x:Static resx:Translations.Add}" />
+                        <Button Content="{x:Static resx:Translations.Show}" />
+                        <Button Content="{x:Static resx:Translations.Add}" />
+
                     </TreeViewItem>
                     <TreeViewItem>
                         <TreeViewItem.Header>
@@ -151,8 +175,9 @@
                                            Margin="16 0 0 0" />
                             </StackPanel>
                         </TreeViewItem.Header>
-                        <TreeViewItem Header="{x:Static resx:Translations.Show}" />
-                        <TreeViewItem Header="{x:Static resx:Translations.Add}" />
+                        <Button Content="{x:Static resx:Translations.Show}" />
+                        <Button Content="{x:Static resx:Translations.Add}" />
+
                     </TreeViewItem>
                 </TreeView>
 
