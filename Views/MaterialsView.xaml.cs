@@ -1,5 +1,6 @@
 ﻿using ExperimentalThingsUsingWPF.Data;
 using ExperimentalThingsUsingWPF.Models;
+using ExperimentalThingsUsingWPF.ViewModels;
 using ExperimentalThingsUsingWPF.Windows;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -12,29 +13,17 @@ namespace ExperimentalThingsUsingWPF.Views
     /// </summary>
     public partial class MaterialsView : UserControl
     {
-        private ObservableCollection<MaterialModel> _materials = new();
-        public MaterialsView()
+        public MaterialsViewModel MaterialsViewModel { get; set; }
+        public MaterialsView(MaterialsViewModel materialsViewModel)
         {
             InitializeComponent();
+            MaterialsViewModel = materialsViewModel;
+            DataContext = MaterialsViewModel;
         }
-
-
 
         private async void MaterialsView_Loaded(object sender, RoutedEventArgs e)
         {
-            _materials = await GetMaterials();
-            materialsGrid.ItemsSource = _materials;
-        }
-
-        private async Task<ObservableCollection<MaterialModel>> GetMaterials()
-        {
-            ObservableCollection<MaterialModel> materials = new();
-            await Task.Run(() =>
-            {
-                materials = DataProvider.GetMaterials();
-            });
-
-            return materials;
+            await MaterialsViewModel.OnLoadedAsync();
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
@@ -43,32 +32,27 @@ namespace ExperimentalThingsUsingWPF.Views
             {
                 var isIdCorrect = int.TryParse(searchTextBox.Text, out int id);
                 if (isIdCorrect)
-                    materialsGrid.ItemsSource = _materials.Where(material => material.Id == id);
+                    materialsGrid.ItemsSource = MaterialsViewModel.Materials.Where(material => material.Id == id);
 
             }
 
             else if (filterByComboBox.Text == "Full Name")
-                materialsGrid.ItemsSource = _materials.Where(material => material.FullName.Contains(searchTextBox.Text));
+                materialsGrid.ItemsSource = MaterialsViewModel.Materials.Where(material => material.FullName.ToLower().Contains(searchTextBox.Text));
 
             else if (filterByComboBox.Text == "Short Name")
-                materialsGrid.ItemsSource = _materials.Where(material => material.ShortName.Contains(searchTextBox.Text));
+                materialsGrid.ItemsSource = MaterialsViewModel.Materials.Where(material => material.ShortName.ToLower().Contains(searchTextBox.Text));
 
             else
             {
                 var isItId = int.TryParse(searchTextBox.Text, out int id);
                 if (isItId)
-                    materialsGrid.ItemsSource = _materials.Where(material => material.Id == id);
+                    materialsGrid.ItemsSource = MaterialsViewModel.Materials.Where(material => material.Id == id);
                 else
                 {
-                    materialsGrid.ItemsSource = _materials.Where(material => material.FullName.Contains(searchTextBox.Text) 
+                    materialsGrid.ItemsSource = MaterialsViewModel.Materials.Where(material => material.FullName.Contains(searchTextBox.Text)
                                                                             || material.ShortName.Contains(searchTextBox.Text));
                 }
             }
-        }
-
-        private void AddMaterialButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            new AddMaterialWindow().ShowDialog();
         }
     }
 }

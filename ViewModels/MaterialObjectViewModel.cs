@@ -8,12 +8,19 @@ using System.Threading.Tasks;
 
 namespace ExperimentalThingsUsingWPF.ViewModels;
 
-public class MaterialObjectViewModel : ValidationViewModelBase
+public class MaterialObjectViewModel : ValidationViewModelBase, IEditableObject
 {
-    private readonly MaterialModel _model;
+    private  MaterialModel _model;
+    private MaterialModel _editableMaterial;
 
-
-    public int Id => _model.Id;
+    public int Id
+    {
+        get => _model.Id; private set
+        {
+            _model.Id = value;
+            OnPropertyChanged();
+        }
+    }
     public string FullName
     {
         get { return _model.FullName; }
@@ -45,7 +52,7 @@ public class MaterialObjectViewModel : ValidationViewModelBase
             }
             else
             {
-                    ClearErrors();
+                ClearErrors();
             }
         }
     }
@@ -57,5 +64,26 @@ public class MaterialObjectViewModel : ValidationViewModelBase
             _model = material;
         }
 
+    }
+
+    public void BeginEdit()
+    {
+        _editableMaterial = new MaterialModel();
+        _editableMaterial.Id = Id;
+        _editableMaterial.ShortName = ShortName;
+        _editableMaterial.FullName = FullName;
+    }
+
+    public void CancelEdit()
+    {
+        Id = _editableMaterial.Id;
+        ShortName = _editableMaterial.ShortName;
+        FullName = _editableMaterial.FullName;
+
+    }
+
+    public void EndEdit()
+    {
+        _editableMaterial = null;
     }
 }

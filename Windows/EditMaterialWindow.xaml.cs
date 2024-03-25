@@ -1,4 +1,5 @@
-﻿using ExperimentalThingsUsingWPF.ViewModels;
+﻿using ExperimentalThingsUsingWPF.Models;
+using ExperimentalThingsUsingWPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +17,14 @@ using System.Windows.Shapes;
 namespace ExperimentalThingsUsingWPF.Windows
 {
     /// <summary>
-    /// Interaction logic for AddMaterialWindow.xaml
+    /// Interaction logic for EditMaterialWindow.xaml
     /// </summary>
-    public partial class AddMaterialWindow : Window
+    public partial class EditMaterialWindow : Window
     {
-        public AddMaterialWindow(AddMaterialViewModel addMaterialViewModel)
+        public EditMaterialWindow(EditMaterialViewModel _editMaterialViewModel)
         {
-            InitializeComponent();
-            DataContext = addMaterialViewModel;
+            InitializeComponent();            
+            DataContext = _editMaterialViewModel;
         }
     }
 }

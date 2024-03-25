@@ -1,12 +1,12 @@
-﻿<Window x:Class="ExperimentalThingsUsingWPF.Windows.AddMaterialWindow"
+﻿<Window x:Class="ExperimentalThingsUsingWPF.Windows.EditMaterialWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Windows"
-        xmlns:viewModels="clr-namespace:ExperimentalThingsUsingWPF.ViewModels"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="EditMaterialWindow"
         SizeToContent="WidthAndHeight"
         FontFamily="{materialDesign:MaterialDesignFont}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -22,7 +22,7 @@
         <StackPanel>
             <TextBlock HorizontalAlignment="Center"
                        FontSize="15"
-                       FontWeight="DemiBold">Adding Material</TextBlock>
+                       FontWeight="DemiBold">Editing Material</TextBlock>
 
             <Label Margin="0 16 0 0">Short Name</Label>
             <TextBox TextWrapping="Wrap"
@@ -47,11 +47,13 @@
                         HorizontalAlignment="Center"
                         IsDefault="True"
                         Command="{Binding SaveMaterialCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
                 <Button Content="Cancel"
                         Grid.Column="1"
                         HorizontalAlignment="Center"
-                        IsCancel="True" />
+                        IsCancel="True" 
+                        Command="{Binding CancelEditingCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
             </Grid>
         </StackPanel>
 

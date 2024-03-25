@@ -1,5 +1,6 @@
 ﻿// Ignore Spelling: Dashbored
 
+using ExperimentalThingsUsingWPF.ViewModels;
 using ExperimentalThingsUsingWPF.Windows;
 using MaterialDesignThemes.Wpf;
 using System.Windows;
@@ -22,7 +23,7 @@ namespace ExperimentalThingsUsingWPF.Views
         {
             var materialsView = MainWindow?.contentControl?.Content as MaterialsView;
             if (materialsView is null)
-                MainWindow.contentControl.Content = new MaterialsView();
+                MainWindow.contentControl.Content = new MaterialsView(new MaterialsViewModel());
 
         }
 
@@ -44,12 +45,12 @@ namespace ExperimentalThingsUsingWPF.Views
         {
             var materialsView = MainWindow?.contentControl?.Content as MaterialsView;
             if (materialsView is null)
-                MainWindow.contentControl.Content = new MaterialsView();
+                MainWindow.contentControl.Content = new MaterialsView(new MaterialsViewModel());
         }
 
         private void Materials_AddButton_OnClick(object sender, RoutedEventArgs e)
         {
-            new AddMaterialWindow().ShowDialog();
+            new AddMaterialWindow(new AddMaterialViewModel()).ShowDialog();
         }
     }
 }

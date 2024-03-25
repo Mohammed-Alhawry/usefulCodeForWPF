@@ -10,6 +10,21 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              Loaded="MaterialsView_Loaded">
+    <UserControl.Resources>
+        <DataTemplate x:Key="editButton">
+            <Button Style="{StaticResource MaterialDesignIconButton}"
+                    Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid}, Path=DataContext.EditMaterialCommand}">
+                <materialDesign:PackIcon Kind="Pencil" />
+            </Button>
+        </DataTemplate>
+
+        <DataTemplate x:Key="deleteButton">
+            <Button Style="{StaticResource MaterialDesignIconButton}"
+                    Foreground="Red">
+                <materialDesign:PackIcon Kind="TrashCan" />
+            </Button>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -46,14 +61,14 @@
                     Margin="10 0 0 0"
                     materialDesign:ButtonAssist.CornerRadius="15"
                     Click="SearchButton_Click"
-                    IsDefault="True" />
+                     />
 
             <Button Content="{x:Static resx:Translations.AddMaterial}"
                     VerticalAlignment="Center"
                     Cursor="Hand"
                     HorizontalAlignment="Right"
                     materialDesign:ButtonAssist.CornerRadius="15"
-                    Click="AddMaterialButton_OnClick" />
+                    Command="{Binding OpenAddMaterialWindowCommand}" />
 
         </DockPanel>
 
@@ -61,25 +76,15 @@
                   Margin="0 30"
                   x:Name="materialsGrid"
                   AutoGenerateColumns="False"
-                  ColumnWidth="*"
+                  ColumnWidth="Auto"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
                   IsReadOnly="True"
                   SelectionMode="Single"
                   SelectionUnit="FullRow"
-                  CanUserReorderColumns="False">
-            <DataGrid.CellStyle>
-                <Style TargetType="DataGridCell"
-                       BasedOn="{StaticResource MaterialDesignDataGridCell}">
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected"
-                                 Value="True">
-                            <Setter Property="BorderThickness"
-                                    Value="0" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.CellStyle>
+                  CanUserReorderColumns="False"
+                  ItemsSource="{Binding Materials}"
+                  SelectedItem="{Binding SelectedMaterial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}"
@@ -88,6 +93,12 @@
                                     Header="{x:Static resx:Translations.ShortName}" />
                 <DataGridTextColumn Binding="{Binding FullName}"
                                     Header="{x:Static resx:Translations.FullName}" />
+                <DataGridTemplateColumn Header="Edit"
+                                        CanUserSort="False"
+                                        CellTemplate="{StaticResource editButton}" />
+                <DataGridTemplateColumn Header="Delete"
+                                        CanUserSort="False"
+                                        CellTemplate="{StaticResource deleteButton}" />
             </DataGrid.Columns>
         </DataGrid>
 
