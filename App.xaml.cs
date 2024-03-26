@@ -13,9 +13,9 @@ namespace ExperimentalThingsUsingWPF
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            //CultureInfo.CurrentUICulture = new CultureInfo("ar");
+            CultureInfo.CurrentUICulture = new CultureInfo("ar");
             var mainWindow = new MainWindow();
-            //mainWindow.FlowDirection = FlowDirection.RightToLeft;
+            mainWindow.FlowDirection = FlowDirection.RightToLeft;
             mainWindow.Show();
         }
     }

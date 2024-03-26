@@ -83,12 +83,7 @@
 
                         <Button Content="{x:Static resx:Translations.Show}"
                                 Click="Materials_ShowButton_OnClick" />
-                        <Button Click="Materials_AddButton_OnClick">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{x:Static resx:Translations.Add}" />
-                                <TextBlock Text=" Material" />
-                            </StackPanel>
-                        </Button>
+                        <Button Click="Materials_AddButton_OnClick" Content="{x:Static resx:Translations.AddMaterial}"/>
 
                     </TreeViewItem>
                     <TreeViewItem>

@@ -5,6 +5,7 @@ using ExperimentalThingsUsingWPF.Windows;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using ExperimentalThingsUsingWPF.Translations;
 
 namespace ExperimentalThingsUsingWPF.Views
 {
@@ -28,7 +29,7 @@ namespace ExperimentalThingsUsingWPF.Views
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            if (filterByComboBox.Text == "Id")
+            if (filterByComboBox.Text == Translations.Translations.Id)
             {
                 var isIdCorrect = int.TryParse(searchTextBox.Text, out int id);
                 if (isIdCorrect)
@@ -36,11 +37,11 @@ namespace ExperimentalThingsUsingWPF.Views
 
             }
 
-            else if (filterByComboBox.Text == "Full Name")
-                materialsGrid.ItemsSource = MaterialsViewModel.Materials.Where(material => material.FullName.ToLower().Contains(searchTextBox.Text));
+            else if (filterByComboBox.Text == Translations.Translations.FullName)
+                materialsGrid.ItemsSource = MaterialsViewModel.Materials.Where(material => material.FullName.ToLower().Contains(searchTextBox.Text.ToLower()));
 
-            else if (filterByComboBox.Text == "Short Name")
-                materialsGrid.ItemsSource = MaterialsViewModel.Materials.Where(material => material.ShortName.ToLower().Contains(searchTextBox.Text));
+            else if (filterByComboBox.Text == Translations.Translations.ShortName)
+                materialsGrid.ItemsSource = MaterialsViewModel.Materials.Where(material => material.ShortName.ToLower().Contains(searchTextBox.Text.ToLower()));
 
             else
             {

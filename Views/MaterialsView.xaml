@@ -61,7 +61,8 @@
                     Cursor="Hand"
                     Margin="10 0 0 0"
                     materialDesign:ButtonAssist.CornerRadius="15"
-                    Click="SearchButton_Click" />
+                    Click="SearchButton_Click"
+                    IsDefault="True" />
 
             <Button Content="{x:Static resx:Translations.AddMaterial}"
                     VerticalAlignment="Center"
@@ -87,17 +88,19 @@
                   SelectedItem="{Binding SelectedMaterial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
 
             <DataGrid.Columns>
+
                 <DataGridTextColumn Binding="{Binding Id}"
-                                    Header="{x:Static resx:Translations.Id}" />
+                                    Header="{x:Static resx:Translations.Id}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}" />
                 <DataGridTextColumn Binding="{Binding ShortName}"
-                                    Header="{x:Static resx:Translations.ShortName}" />
+                                    Header="{x:Static resx:Translations.ShortName}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}"/>
                 <DataGridTextColumn Binding="{Binding FullName}"
-                                    Header="{x:Static resx:Translations.FullName}" />
-                <DataGridTemplateColumn Header="Edit"
-                                        CanUserSort="False"
+                                    Header="{x:Static resx:Translations.FullName}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}"/>
+                <DataGridTemplateColumn CanUserSort="False"
                                         CellTemplate="{StaticResource editButton}" />
-                <DataGridTemplateColumn Header="Delete"
-                                        CanUserSort="False"
+                <DataGridTemplateColumn CanUserSort="False"
                                         CellTemplate="{StaticResource deleteButton}" />
             </DataGrid.Columns>
         </DataGrid>
