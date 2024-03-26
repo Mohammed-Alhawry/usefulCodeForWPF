@@ -6,16 +6,16 @@ using System.Windows;
 
 namespace ExperimentalThingsUsingWPF.ViewModels;
 
-public class EditUserViewModel: ViewModelBase
+public class EditUserViewModel : ViewModelBase
 {
     public UserObjectViewModel UserObject { get; set; }
     public DelegateCommand SaveUserCommand { get; set; }
     public DelegateCommand CancelEditingCommand { get; set; }
-    public ObservableCollection<UserType> UserTypes { get; set; }
+
 
     public EditUserViewModel(UserObjectViewModel user)
     {
-        UserTypes = new ObservableCollection<UserType>(Enum.GetValues<UserType>());
+
         user?.BeginEdit();
         UserObject = user;
 

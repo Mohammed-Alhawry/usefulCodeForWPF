@@ -14,12 +14,12 @@ public class AddUserViewModel : ViewModelBase
 {
     public UserObjectViewModel UserObject { get; set; }
     public DelegateCommand SaveUserCommand { get; set; }
-    public ObservableCollection<UserType> UserTypes { get; set; }
+    
     public AddUserViewModel()
     {
         UserObject = new UserObjectViewModel(new UserModel());
         SaveUserCommand = new DelegateCommand(SaveUser);
-        UserTypes = new ObservableCollection<UserType>(Enum.GetValues<UserType>());
+    
     }
 
     private void SaveUser(object parameter)

@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Windows"
+        xmlns:helperClasses="clr-namespace:ExperimentalThingsUsingWPF.HelperClasses"
+        xmlns:models="clr-namespace:ExperimentalThingsUsingWPF.Models"
         mc:Ignorable="d"
         xmlns:resx="clr-namespace:ExperimentalThingsUsingWPF.Translations"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -31,7 +33,7 @@
                       VerticalAlignment="Center"
                       MinWidth="20"
                       SelectedItem="{Binding UserObject.UserType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                      ItemsSource="{Binding UserTypes}"
+                      ItemsSource="{Binding Source={helperClasses:EnumBindingSource {x:Type models:UserType}}}"
                       SelectedIndex="1" />
 
             <Label Margin="0 16 0 0"
