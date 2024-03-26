@@ -29,7 +29,7 @@
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left">
 
-                    <ToggleButton 
+                    <ToggleButton Cursor="Hand"
                                   IsChecked="{Binding IsLeftDrawerOpen}"
                                   Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
                     <TextBlock Text="{x:Static resx:Translations.AppName}"

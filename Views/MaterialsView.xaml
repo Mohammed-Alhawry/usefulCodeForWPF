@@ -20,7 +20,8 @@
 
         <DataTemplate x:Key="deleteButton">
             <Button Style="{StaticResource MaterialDesignIconButton}"
-                    Foreground="Red">
+                    Foreground="Red"
+                    Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid}, Path=DataContext.OpenDeleteConfirmationDialogCommand}">
                 <materialDesign:PackIcon Kind="TrashCan" />
             </Button>
         </DataTemplate>
@@ -60,8 +61,7 @@
                     Cursor="Hand"
                     Margin="10 0 0 0"
                     materialDesign:ButtonAssist.CornerRadius="15"
-                    Click="SearchButton_Click"
-                     />
+                    Click="SearchButton_Click" />
 
             <Button Content="{x:Static resx:Translations.AddMaterial}"
                     VerticalAlignment="Center"

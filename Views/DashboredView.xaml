@@ -13,6 +13,7 @@
     <UserControl.Resources>
         <Style TargetType="Button"
                BasedOn="{StaticResource MaterialDesignFlatDarkBgButton}">
+            
             <Setter Property="FontSize"
                     Value="{Binding RelativeSource={RelativeSource AncestorType=TreeViewItem}, Path=FontSize}" />
             <Setter Property="FontFamily"
@@ -38,6 +39,7 @@
                           HorizontalAlignment="Right"
                           VerticalAlignment="Top"
                           Margin="16"
+                          Cursor="Hand"
                           IsChecked="{Binding IsLeftDrawerOpen}" />
 
             <StackPanel Grid.ColumnSpan="2">
