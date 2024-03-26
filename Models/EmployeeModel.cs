@@ -9,6 +9,5 @@ public class EmployeeModel : PersonModel
     public string Qualification { get; set; }
     public EmployeeType EmployeeType { get; set; }
     public ObservableCollection<AttendanceModel> Attendances { get; set; }
-    
     public ObservableCollection<EmployeeContactModel> Contacts { get; set; }
 }

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace ExperimentalThingsUsingWPF.ViewModels;
 
-public class ViewModelBase : INotifyPropertyChanged
+public abstract class ViewModelBase : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -12,9 +12,10 @@ public class ViewModelBase : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    protected virtual async Task OnLoaded()
+    public virtual async Task OnLoadedAsync()
     {
         await Task.CompletedTask;
     }
+
 
 }

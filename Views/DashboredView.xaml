@@ -131,7 +131,7 @@
                         <Button Content="{x:Static resx:Translations.Add}" />
 
                     </TreeViewItem>
-                    <TreeViewItem>
+                    <TreeViewItem Selected="Users_OnSelected">
                         <TreeViewItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Users"
@@ -142,8 +142,8 @@
                                            Margin="16 0 0 0" />
                             </StackPanel>
                         </TreeViewItem.Header>
-                        <Button Content="{x:Static resx:Translations.Show}" />
-                        <Button Content="{x:Static resx:Translations.Add}" />
+                        <Button Content="{x:Static resx:Translations.Show}" Click="Users_ShowButton_OnClick" />
+                        <Button Content="{x:Static resx:Translations.AddUser}" Click="Users_AddButton_OnClick"/>
 
                     </TreeViewItem>
                     <TreeViewItem>
@@ -185,7 +185,7 @@
                      Margin="5 40 0 5"
                      Width="100">
 
-                <themeSwitch:ThemeSwitch Click="ThemeSwitch_OnClick" />
+                <themeSwitch:ThemeSwitch Click="ThemeSwitch_OnClick" IsChecked="True" />
             </Viewbox>
         </Grid>
     </ScrollViewer>

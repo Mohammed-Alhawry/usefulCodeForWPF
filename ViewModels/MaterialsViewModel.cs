@@ -53,7 +53,7 @@ public class MaterialsViewModel : ViewModelBase
         editWindow.ShowDialog();
     }
 
-    public async Task OnLoadedAsync()
+    public override async Task OnLoadedAsync()
     {
         
         await Task.Run(() => Materials = MaterialsTransformer.TransformToViewModels(DataProvider.GetMaterials()));

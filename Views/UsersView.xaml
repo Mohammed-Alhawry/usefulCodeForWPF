@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="ExperimentalThingsUsingWPF.Views.UsersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:resx="clr-namespace:ExperimentalThingsUsingWPF.Translations"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate x:Key="editButton">
+            <Button Style="{StaticResource MaterialDesignIconButton}"
+                    Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid}, Path=DataContext.EditUserCommand}">
+                <materialDesign:PackIcon Kind="Pencil" />
+            </Button>
+        </DataTemplate>
+
+        <DataTemplate x:Key="deleteButton">
+            <Button Style="{StaticResource MaterialDesignIconButton}"
+                    Foreground="Red"
+                    Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid}, Path=DataContext.OpenDeleteConfirmationDialogCommand}">
+                <materialDesign:PackIcon Kind="TrashCan" />
+            </Button>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <DockPanel>
+            <materialDesign:PackIcon Kind="Search"
+                                     VerticalAlignment="Center"
+                                     Height="25"
+                                     Width="25"
+                                     Foreground="{Binding ElementName=searchTextBox, Path=BorderBrush}" />
+            <TextBox x:Name="searchTextBox"
+                     VerticalAlignment="Center"
+                     Width="200"
+                     materialDesign:HintAssist.Hint="{x:Static resx:Translations.SearchTextBoxHint}"
+                     TextWrapping="Wrap" />
+            <Button Content="{x:Static resx:Translations.Search}"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    Margin="10 0 0 0"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    Click="SearchButton_Click"
+                    IsDefault="True" />
+
+            <Button Content="{x:Static resx:Translations.AddUser}"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    HorizontalAlignment="Right"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    Command="{Binding OpenAddUserWindowCommand}" />
+
+        </DockPanel>
+
+        <DataGrid Grid.Row="1"
+                  Margin="0 30"
+                  x:Name="usersGrid"
+                  AutoGenerateColumns="False"
+                  ColumnWidth="Auto"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  CanUserReorderColumns="False"
+                  ItemsSource="{Binding Users}"
+                  SelectedItem="{Binding SelectedUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Binding="{Binding Id}"
+                                    Header="{x:Static resx:Translations.Id}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}" />
+                <DataGridTextColumn Binding="{Binding UserType}"
+                                    Header="{x:Static resx:Translations.UserType}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}" />
+                <DataGridTextColumn Binding="{Binding UserName}"
+                                    Header="{x:Static resx:Translations.UserName}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}" />
+                <DataGridTextColumn Binding="{Binding DisplayName}"
+                                    Header="{x:Static resx:Translations.DisplayName}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}" />
+                <DataGridTextColumn Binding="{Binding Password}"
+                                    Header="{x:Static resx:Translations.Password}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}" />
+                <DataGridTemplateColumn CanUserSort="False"
+                                        CellTemplate="{StaticResource editButton}" />
+                <DataGridTemplateColumn CanUserSort="False"
+                                        CellTemplate="{StaticResource deleteButton}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

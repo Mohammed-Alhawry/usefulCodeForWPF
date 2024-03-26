@@ -1,17 +1,12 @@
 ﻿using ExperimentalThingsUsingWPF.Models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExperimentalThingsUsingWPF.ViewModels;
 
 public class MaterialObjectViewModel : ValidationViewModelBase, IEditableObject
 {
     private  MaterialModel _model;
-    private MaterialModel _editableMaterial;
+    private MaterialModel _previousMaterial;
 
     public int Id
     {
@@ -68,22 +63,22 @@ public class MaterialObjectViewModel : ValidationViewModelBase, IEditableObject
 
     public void BeginEdit()
     {
-        _editableMaterial = new MaterialModel();
-        _editableMaterial.Id = Id;
-        _editableMaterial.ShortName = ShortName;
-        _editableMaterial.FullName = FullName;
+        _previousMaterial = new MaterialModel();
+        _previousMaterial.Id = Id;
+        _previousMaterial.ShortName = ShortName;
+        _previousMaterial.FullName = FullName;
     }
 
     public void CancelEdit()
     {
-        Id = _editableMaterial.Id;
-        ShortName = _editableMaterial.ShortName;
-        FullName = _editableMaterial.FullName;
+        Id = _previousMaterial.Id;
+        ShortName = _previousMaterial.ShortName;
+        FullName = _previousMaterial.FullName;
 
     }
 
     public void EndEdit()
     {
-        _editableMaterial = null;
+        _previousMaterial = null;
     }
 }

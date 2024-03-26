@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace ExperimentalThingsUsingWPF.ViewModels;
 
-public class EditMaterialViewModel : ValidationViewModelBase
+public class EditMaterialViewModel : ViewModelBase
 {
     public MaterialObjectViewModel MaterialObject { get; set; }
     public DelegateCommand SaveMaterialCommand { get; set; }

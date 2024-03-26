@@ -220,8 +220,9 @@ public static class DataProvider
         var users = new Faker<UserModel>().RuleFor(e => e.UserName, f => f.Name.FirstName())
             .RuleFor(e => e.DisplayName, f => f.Name.LastName())
             .RuleFor(e => e.Password, f => new String(f.Random.Chars()))
-            .RuleFor(e => e.UserType, f => f.Random.Enum<UserType>()).Generate(3);
-        
+            .RuleFor(e => e.UserType, f => f.Random.Enum<UserType>()).RuleFor(e => e.Id, f => f.Random.Number(1, 10))
+            .Generate(3);
+
         return new ObservableCollection<UserModel>(users);
     }
     public static ObservableCollection<ClinicContactModel> GetClinicsContacts()

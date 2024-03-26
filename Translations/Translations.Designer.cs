@@ -79,11 +79,29 @@ namespace ExperimentalThingsUsingWPF.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اضافة مستخدم.
+        /// </summary>
+        public static string AddingUser {
+            get {
+                return ResourceManager.GetString("AddingUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اضافة مادة.
         /// </summary>
         public static string AddMaterial {
             get {
                 return ResourceManager.GetString("AddMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اضافة مستخدم.
+        /// </summary>
+        public static string AddUser {
+            get {
+                return ResourceManager.GetString("AddUser", resourceCulture);
             }
         }
         
@@ -124,11 +142,38 @@ namespace ExperimentalThingsUsingWPF.Translations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تعديل المادة.
+        ///   Looks up a localized string similar to اسم العرض.
+        /// </summary>
+        public static string DisplayName {
+            get {
+                return ResourceManager.GetString("DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات المادة.
         /// </summary>
         public static string EditingMaterial {
             get {
                 return ResourceManager.GetString("EditingMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات المستخدم.
+        /// </summary>
+        public static string EditingUser {
+            get {
+                return ResourceManager.GetString("EditingUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات المستخدم.
+        /// </summary>
+        public static string EditUser {
+            get {
+                return ResourceManager.GetString("EditUser", resourceCulture);
             }
         }
         
@@ -142,11 +187,29 @@ namespace ExperimentalThingsUsingWPF.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to كلمة السر مطلوبة ويجب ان تكون مكونة  على الاقل من 8 احرف وارقام ورموز.
+        /// </summary>
+        public static string ErrorPassword {
+            get {
+                return ResourceManager.GetString("ErrorPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الاسم المختصر مطلوب.
         /// </summary>
         public static string ErrorShortNameRequired {
             get {
                 return ResourceManager.GetString("ErrorShortNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اسم المستخدم مطلوب.
+        /// </summary>
+        public static string ErrorUserNameRequired {
+            get {
+                return ResourceManager.GetString("ErrorUserNameRequired", resourceCulture);
             }
         }
         
@@ -192,6 +255,15 @@ namespace ExperimentalThingsUsingWPF.Translations {
         public static string MohammedGhalab {
             get {
                 return ResourceManager.GetString("MohammedGhalab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to كلمة السر.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         
@@ -291,6 +363,24 @@ namespace ExperimentalThingsUsingWPF.Translations {
         public static string TheWarehouses {
             get {
                 return ResourceManager.GetString("TheWarehouses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اسم المستخدم.
+        /// </summary>
+        public static string UserName {
+            get {
+                return ResourceManager.GetString("UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نوع المستخدم.
+        /// </summary>
+        public static string UserType {
+            get {
+                return ResourceManager.GetString("UserType", resourceCulture);
             }
         }
     }

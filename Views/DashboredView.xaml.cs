@@ -52,5 +52,24 @@ namespace ExperimentalThingsUsingWPF.Views
         {
             new AddMaterialWindow(new AddMaterialViewModel()).ShowDialog();
         }
+
+        private void Users_ShowButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var usersView = MainWindow?.contentControl?.Content as UsersView;
+            if (usersView is null)
+                MainWindow.contentControl.Content = new UsersView(new UsersViewModel());
+        }
+
+        private void Users_OnSelected(object sender, RoutedEventArgs e)
+        {
+            var usersView = MainWindow?.contentControl?.Content as UsersView;
+            if (usersView is null)
+                MainWindow.contentControl.Content = new UsersView(new UsersViewModel());
+        }
+
+        private void Users_AddButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            new AddUserWindow(new AddUserViewModel()).ShowDialog();
+        }
     }
 }

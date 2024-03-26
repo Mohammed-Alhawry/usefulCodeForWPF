@@ -21,10 +21,10 @@ namespace ExperimentalThingsUsingWPF.Windows
     /// </summary>
     public partial class EditMaterialWindow : Window
     {
-        public EditMaterialWindow(EditMaterialViewModel _editMaterialViewModel)
+        public EditMaterialWindow(EditMaterialViewModel editMaterialViewModel)
         {
             InitializeComponent();            
-            DataContext = _editMaterialViewModel;
+            DataContext = editMaterialViewModel;
         }
     }
 }
