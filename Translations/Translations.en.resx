@@ -120,6 +120,9 @@
   <data name="Add" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="AddingMaterial" xml:space="preserve">
+    <value>Adding Material</value>
+  </data>
   <data name="AddMaterial" xml:space="preserve">
     <value>Add Material</value>
   </data>
@@ -128,6 +131,21 @@
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Echo</value>
+  </data>
+  <data name="DeleteConfirmationMessage" xml:space="preserve">
+    <value>Are you sure that you want to delete?</value>
+  </data>
+  <data name="DialogCaption" xml:space="preserve">
+    <value>Echo</value>
+  </data>
+  <data name="EditingMaterial" xml:space="preserve">
+    <value>Editing Material</value>
+  </data>
+  <data name="ErrorFullNameRequired" xml:space="preserve">
+    <value>Full name is required</value>
+  </data>
+  <data name="ErrorShortNameRequired" xml:space="preserve">
+    <value>Short name is required</value>
   </data>
   <data name="FilterBy" xml:space="preserve">
     <value>Filter By</value>

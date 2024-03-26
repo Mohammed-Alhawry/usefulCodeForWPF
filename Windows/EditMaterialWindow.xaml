@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Windows"
+        xmlns:resx="clr-namespace:ExperimentalThingsUsingWPF.Translations"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="EditMaterialWindow"
         SizeToContent="WidthAndHeight"
         FontFamily="{materialDesign:MaterialDesignFont}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -22,16 +22,19 @@
         <StackPanel>
             <TextBlock HorizontalAlignment="Center"
                        FontSize="15"
-                       FontWeight="DemiBold">Editing Material</TextBlock>
+                       FontWeight="DemiBold"
+                       Text="{x:Static resx:Translations.EditingMaterial}"/>
 
-            <Label Margin="0 16 0 0">Short Name</Label>
+            <Label Margin="0 16 0 0"
+                   Content="{x:Static resx:Translations.ShortName}" />
             <TextBox TextWrapping="Wrap"
                      Width="300"
                      Margin="0 0 0 16"
                      materialDesign:ValidationAssist.FontSize="13"
                      Text="{Binding MaterialObject.ShortName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Margin="0 16 0 0">Full Name</Label>
+            <Label Margin="0 16 0 0"
+                   Content="{x:Static resx:Translations.FullName}" />
             <TextBox Width="300"
                      TextWrapping="Wrap"
                      Margin="0 0 0 16"
@@ -51,9 +54,9 @@
                 <Button Content="Cancel"
                         Grid.Column="1"
                         HorizontalAlignment="Center"
-                        IsCancel="True" 
+                        IsCancel="True"
                         Command="{Binding CancelEditingCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
             </Grid>
         </StackPanel>
 

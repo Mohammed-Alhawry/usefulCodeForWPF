@@ -2,7 +2,7 @@
 
 namespace ExperimentalThingsUsingWPF;
 
-public partial class MainWindow
+public partial class MainWindow 
 {
     public class DashBoredItem
     {

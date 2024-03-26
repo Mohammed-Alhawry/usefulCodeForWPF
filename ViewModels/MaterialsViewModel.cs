@@ -29,8 +29,8 @@ public class MaterialsViewModel : ViewModelBase
     {
         if (SelectedMaterial is not null)
         {
-            var messageBoxText = "Are you sure that you want to delete?";
-            var caption = "Delete Material";
+            var messageBoxText = Translations.Translations.DeleteConfirmationMessage;
+            var caption = Translations.Translations.DialogCaption;
             var messageBoxButton = MessageBoxButton.YesNo;
             var messageBoxIcon = MessageBoxImage.Warning;
             var yesOrNo = MessageBox.Show(messageBoxText, caption, messageBoxButton, messageBoxIcon);

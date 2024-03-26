@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Windows"
         xmlns:viewModels="clr-namespace:ExperimentalThingsUsingWPF.ViewModels"
+        xmlns:resx="clr-namespace:ExperimentalThingsUsingWPF.Translations"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         SizeToContent="WidthAndHeight"
@@ -21,17 +22,19 @@
             Padding="5">
         <StackPanel>
             <TextBlock HorizontalAlignment="Center"
-                       FontSize="15"
-                       FontWeight="DemiBold">Adding Material</TextBlock>
+                       FontFamily="{StaticResource MaterialDesignFont}"
+                       Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                       Text="{x:Static resx:Translations.AddingMaterial}"/>
 
-            <Label Margin="0 16 0 0">Short Name</Label>
+            <Label Margin="0 16 0 0" Content="{x:Static resx:Translations.ShortName}"/>
             <TextBox TextWrapping="Wrap"
                      Width="300"
                      Margin="0 0 0 16"
                      materialDesign:ValidationAssist.FontSize="13"
                      Text="{Binding MaterialObject.ShortName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Margin="0 16 0 0">Full Name</Label>
+            <Label Margin="0 16 0 0"
+                   Content="{x:Static resx:Translations.FullName}"/>
             <TextBox Width="300"
                      TextWrapping="Wrap"
                      Margin="0 0 0 16"
@@ -47,7 +50,7 @@
                         HorizontalAlignment="Center"
                         IsDefault="True"
                         Command="{Binding SaveMaterialCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
                 <Button Content="Cancel"
                         Grid.Column="1"
                         HorizontalAlignment="Center"

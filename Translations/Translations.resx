@@ -120,6 +120,9 @@
   <data name="Add" xml:space="preserve">
     <value>اضافة</value>
   </data>
+  <data name="AddingMaterial" xml:space="preserve">
+    <value>اضافة مادة</value>
+  </data>
   <data name="AddMaterial" xml:space="preserve">
     <value>اضافة مادة</value>
   </data>
@@ -128,6 +131,21 @@
   </data>
   <data name="AppName" xml:space="preserve">
     <value>ايكو</value>
+  </data>
+  <data name="DeleteConfirmationMessage" xml:space="preserve">
+    <value>هل انت متأكد انك تريد الحذف</value>
+  </data>
+  <data name="DialogCaption" xml:space="preserve">
+    <value>ايكو</value>
+  </data>
+  <data name="EditingMaterial" xml:space="preserve">
+    <value>تعديل المادة</value>
+  </data>
+  <data name="ErrorFullNameRequired" xml:space="preserve">
+    <value>الاسم الكامل مطلوب</value>
+  </data>
+  <data name="ErrorShortNameRequired" xml:space="preserve">
+    <value>الاسم المختصر مطلوب</value>
   </data>
   <data name="FilterBy" xml:space="preserve">
     <value>فرز بحسب</value>

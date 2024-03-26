@@ -30,7 +30,7 @@ public class MaterialObjectViewModel : ValidationViewModelBase, IEditableObject
             OnPropertyChanged();
             if (string.IsNullOrWhiteSpace(value))
             {
-                AddError("Full Name is required");
+                AddError(Translations.Translations.ErrorFullNameRequired);
             }
             else
             {
@@ -48,7 +48,7 @@ public class MaterialObjectViewModel : ValidationViewModelBase, IEditableObject
             OnPropertyChanged();
             if (string.IsNullOrWhiteSpace(value))
             {
-                AddError("Short Name is required");
+                AddError(Translations.Translations.ErrorShortNameRequired);
             }
             else
             {

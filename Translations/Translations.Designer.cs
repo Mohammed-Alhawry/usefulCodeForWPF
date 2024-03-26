@@ -72,6 +72,15 @@ namespace ExperimentalThingsUsingWPF.Translations {
         /// <summary>
         ///   Looks up a localized string similar to اضافة مادة.
         /// </summary>
+        public static string AddingMaterial {
+            get {
+                return ResourceManager.GetString("AddingMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اضافة مادة.
+        /// </summary>
         public static string AddMaterial {
             get {
                 return ResourceManager.GetString("AddMaterial", resourceCulture);
@@ -93,6 +102,51 @@ namespace ExperimentalThingsUsingWPF.Translations {
         public static string AppName {
             get {
                 return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هل انت متأكد انك تريد الحذف.
+        /// </summary>
+        public static string DeleteConfirmationMessage {
+            get {
+                return ResourceManager.GetString("DeleteConfirmationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ايكو.
+        /// </summary>
+        public static string DialogCaption {
+            get {
+                return ResourceManager.GetString("DialogCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعديل المادة.
+        /// </summary>
+        public static string EditingMaterial {
+            get {
+                return ResourceManager.GetString("EditingMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الاسم الكامل مطلوب.
+        /// </summary>
+        public static string ErrorFullNameRequired {
+            get {
+                return ResourceManager.GetString("ErrorFullNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الاسم المختصر مطلوب.
+        /// </summary>
+        public static string ErrorShortNameRequired {
+            get {
+                return ResourceManager.GetString("ErrorShortNameRequired", resourceCulture);
             }
         }
         
