@@ -28,7 +28,7 @@
                        Text="{x:Static resx:Translations.EditingUser}" />
 
             <Label Margin="0 16 0 0"
-                   Content="User Type" />
+                   Content="{x:Static resx:Translations.UserType}" />
             <ComboBox Style="{StaticResource MaterialDesignComboBox}"
                       VerticalAlignment="Center"
                       MinWidth="20"

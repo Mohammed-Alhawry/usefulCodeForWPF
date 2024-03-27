@@ -258,4 +258,13 @@
   <data name="UserType" xml:space="preserve">
     <value>نوع المستخدم</value>
   </data>
+  <data name="UserType1" xml:space="preserve">
+    <value>النوع الاول</value>
+  </data>
+  <data name="UserType2" xml:space="preserve">
+    <value>النوع الثاني</value>
+  </data>
+  <data name="UserType3" xml:space="preserve">
+    <value>النوع الثالث</value>
+  </data>
 </root>

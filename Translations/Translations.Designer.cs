@@ -482,5 +482,32 @@ namespace ExperimentalThingsUsingWPF.Translations {
                 return ResourceManager.GetString("UserType", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to النوع الاول.
+        /// </summary>
+        public static string UserType1 {
+            get {
+                return ResourceManager.GetString("UserType1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to النوع الثاني.
+        /// </summary>
+        public static string UserType2 {
+            get {
+                return ResourceManager.GetString("UserType2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to النوع الثالث.
+        /// </summary>
+        public static string UserType3 {
+            get {
+                return ResourceManager.GetString("UserType3", resourceCulture);
+            }
+        }
     }
 }
