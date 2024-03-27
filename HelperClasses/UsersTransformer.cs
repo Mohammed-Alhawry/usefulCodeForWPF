@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace ExperimentalThingsUsingWPF.HelperClasses;
 
-public class UsersTransformer
+public static class UsersTransformer
 {
     public static ObservableCollection<UserObjectViewModel> TransformToViewModels(IEnumerable<UserModel> users)
     {

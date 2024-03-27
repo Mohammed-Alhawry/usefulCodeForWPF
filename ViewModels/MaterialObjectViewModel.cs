@@ -8,14 +8,8 @@ public class MaterialObjectViewModel : ValidationViewModelBase, IEditableObject
     private  MaterialModel _model;
     private MaterialModel _previousMaterial;
 
-    public int Id
-    {
-        get => _model.Id; private set
-        {
-            _model.Id = value;
-            OnPropertyChanged();
-        }
-    }
+    public int Id => _model.Id; 
+    
     public string FullName
     {
         get { return _model.FullName; }
@@ -64,14 +58,14 @@ public class MaterialObjectViewModel : ValidationViewModelBase, IEditableObject
     public void BeginEdit()
     {
         _previousMaterial = new MaterialModel();
-        _previousMaterial.Id = Id;
+        
         _previousMaterial.ShortName = ShortName;
         _previousMaterial.FullName = FullName;
     }
 
     public void CancelEdit()
     {
-        Id = _previousMaterial.Id;
+        
         ShortName = _previousMaterial.ShortName;
         FullName = _previousMaterial.FullName;
 

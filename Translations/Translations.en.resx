@@ -120,6 +120,12 @@
   <data name="Add" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="AddClinic" xml:space="preserve">
+    <value>Add Clinic</value>
+  </data>
+  <data name="AddingClinic" xml:space="preserve">
+    <value>Adding Clinic</value>
+  </data>
   <data name="AddingMaterial" xml:space="preserve">
     <value>Adding Material</value>
   </data>
@@ -128,6 +134,9 @@
   </data>
   <data name="AddMaterial" xml:space="preserve">
     <value>Add Material</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
   </data>
   <data name="AddUser" xml:space="preserve">
     <value>Add User</value>
@@ -147,6 +156,9 @@
   <data name="DisplayName" xml:space="preserve">
     <value>Display Name</value>
   </data>
+  <data name="EditingClinic" xml:space="preserve">
+    <value>Editing Clinic Info</value>
+  </data>
   <data name="EditingMaterial" xml:space="preserve">
     <value>Editing Material Info</value>
   </data>
@@ -156,8 +168,14 @@
   <data name="EditUser" xml:space="preserve">
     <value>Edit User Info</value>
   </data>
+  <data name="ErrorAddressRequired" xml:space="preserve">
+    <value>Address is required</value>
+  </data>
   <data name="ErrorFullNameRequired" xml:space="preserve">
     <value>Full name is required</value>
+  </data>
+  <data name="ErrorNameRequired" xml:space="preserve">
+    <value>Name is required</value>
   </data>
   <data name="ErrorPassword" xml:space="preserve">
     <value>Password is required and should be made of at least 8 charachters and numbers and symbols</value>
@@ -183,6 +201,9 @@
   <data name="MohammedGhalab" xml:space="preserve">
     <value>Mohammed Ghalab</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -197,6 +218,12 @@
   </data>
   <data name="Show" xml:space="preserve">
     <value>Show</value>
+  </data>
+  <data name="ShowContacts" xml:space="preserve">
+    <value>Show Contacts Info</value>
+  </data>
+  <data name="ShowRequests" xml:space="preserve">
+    <value>Show Requests</value>
   </data>
   <data name="TheBills" xml:space="preserve">
     <value>Bills</value>

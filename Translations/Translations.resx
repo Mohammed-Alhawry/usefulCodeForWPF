@@ -120,6 +120,12 @@
   <data name="Add" xml:space="preserve">
     <value>اضافة</value>
   </data>
+  <data name="AddClinic" xml:space="preserve">
+    <value>اضافة عيادة</value>
+  </data>
+  <data name="AddingClinic" xml:space="preserve">
+    <value>اضافة عيادة</value>
+  </data>
   <data name="AddingMaterial" xml:space="preserve">
     <value>اضافة مادة</value>
   </data>
@@ -128,6 +134,9 @@
   </data>
   <data name="AddMaterial" xml:space="preserve">
     <value>اضافة مادة</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>العنوان</value>
   </data>
   <data name="AddUser" xml:space="preserve">
     <value>اضافة مستخدم</value>
@@ -147,6 +156,9 @@
   <data name="DisplayName" xml:space="preserve">
     <value>اسم العرض</value>
   </data>
+  <data name="EditingClinic" xml:space="preserve">
+    <value>تعديل بيانات العيادة</value>
+  </data>
   <data name="EditingMaterial" xml:space="preserve">
     <value>تعديل بيانات المادة</value>
   </data>
@@ -156,8 +168,14 @@
   <data name="EditUser" xml:space="preserve">
     <value>تعديل بيانات المستخدم</value>
   </data>
+  <data name="ErrorAddressRequired" xml:space="preserve">
+    <value>العنوان مطلوب</value>
+  </data>
   <data name="ErrorFullNameRequired" xml:space="preserve">
     <value>الاسم الكامل مطلوب</value>
+  </data>
+  <data name="ErrorNameRequired" xml:space="preserve">
+    <value>الاسم مطلوب</value>
   </data>
   <data name="ErrorPassword" xml:space="preserve">
     <value>كلمة السر مطلوبة ويجب ان تكون مكونة  على الاقل من 8 احرف وارقام ورموز</value>
@@ -183,6 +201,9 @@
   <data name="MohammedGhalab" xml:space="preserve">
     <value>محمد غلاب</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>كلمة السر</value>
   </data>
@@ -197,6 +218,12 @@
   </data>
   <data name="Show" xml:space="preserve">
     <value>عرض</value>
+  </data>
+  <data name="ShowContacts" xml:space="preserve">
+    <value>عرض بيانات التواصل</value>
+  </data>
+  <data name="ShowRequests" xml:space="preserve">
+    <value>عرض الطلبات</value>
   </data>
   <data name="TheBills" xml:space="preserve">
     <value>السندات المالية</value>

@@ -55,7 +55,7 @@ public class UsersViewModel : ViewModelBase
 
     public override async Task OnLoadedAsync()
     {
-
+        
         await Task.Run(() => Users = UsersTransformer.TransformToViewModels(DataProvider.GetUsers()));
         OnPropertyChanged(nameof(Users));
     }

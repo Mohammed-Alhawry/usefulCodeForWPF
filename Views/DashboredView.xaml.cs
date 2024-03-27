@@ -71,5 +71,25 @@ namespace ExperimentalThingsUsingWPF.Views
         {
             new AddUserWindow(new AddUserViewModel()).ShowDialog();
         }
+
+        private void Clinics_ShowButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var clinicsView = MainWindow?.contentControl?.Content as ClinicsView;
+            if (clinicsView is null)
+                MainWindow.contentControl.Content = new ClinicsView(new ClinicsViewModel());
+        }
+
+        private void Clinics_AddButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            new AddClinicWindow(new AddClinicViewModel()).ShowDialog();
+
+        }
+
+        private void Clinics_OnSelected(object sender, RoutedEventArgs e)
+        {
+            var clinicsView = MainWindow?.contentControl?.Content as ClinicsView;
+            if (clinicsView is null)
+                MainWindow.contentControl.Content = new ClinicsView(new ClinicsViewModel());
+        }
     }
 }

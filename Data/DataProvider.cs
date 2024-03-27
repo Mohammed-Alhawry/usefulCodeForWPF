@@ -71,14 +71,14 @@ public static class DataProvider
         return new ObservableCollection<ClinicModel>
         {
             new ClinicModel{Id = 1, Name = "alsharabi", Address = "alomairi, street 1"
-            , Contacts = (ObservableCollection<ClinicContactModel>)GetClinicsContacts().Where(e => e.ClinicId == 1)},
+            , Contacts = new ObservableCollection<ClinicContactModel>(GetClinicsContacts().Where(e => e.ClinicId == 1))},
             new ClinicModel{Id = 2, Name = "aloamiri", Address = "alhawry, street 3" ,
-            Contacts = (ObservableCollection<ClinicContactModel>)GetClinicsContacts().Where(e => e.ClinicId == 2)},
+            Contacts = new ObservableCollection<ClinicContactModel>(GetClinicsContacts().Where(e => e.ClinicId == 2))},
             new ClinicModel{Id = 3, Name = "alhawry", Address = "Sana'a, street 12"
-            ,Contacts = (ObservableCollection<ClinicContactModel>)GetClinicsContacts().Where(e => e.ClinicId == 3)},
+            ,Contacts = new ObservableCollection<ClinicContactModel>(GetClinicsContacts().Where(e => e.ClinicId == 3))},
             new ClinicModel{Id = 4, Name = "jamali", Address = "Bab alyemen, street 11"
-            ,Contacts = (ObservableCollection<ClinicContactModel>)GetClinicsContacts().Where(e => e.ClinicId == 4)},
-            // still there should be requests are missing
+            ,Contacts =new ObservableCollection<ClinicContactModel>(GetClinicsContacts().Where(e => e.ClinicId == 4))},
+             //still there should be requests are missing
         };
     }
     public static ObservableCollection<WorkTypeModel> GetWorksTypes()

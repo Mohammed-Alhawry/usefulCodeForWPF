@@ -70,6 +70,24 @@ namespace ExperimentalThingsUsingWPF.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اضافة عيادة.
+        /// </summary>
+        public static string AddClinic {
+            get {
+                return ResourceManager.GetString("AddClinic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اضافة عيادة.
+        /// </summary>
+        public static string AddingClinic {
+            get {
+                return ResourceManager.GetString("AddingClinic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to اضافة مادة.
         /// </summary>
         public static string AddingMaterial {
@@ -93,6 +111,15 @@ namespace ExperimentalThingsUsingWPF.Translations {
         public static string AddMaterial {
             get {
                 return ResourceManager.GetString("AddMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to العنوان.
+        /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
             }
         }
         
@@ -151,6 +178,15 @@ namespace ExperimentalThingsUsingWPF.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تعديل بيانات العيادة.
+        /// </summary>
+        public static string EditingClinic {
+            get {
+                return ResourceManager.GetString("EditingClinic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تعديل بيانات المادة.
         /// </summary>
         public static string EditingMaterial {
@@ -178,11 +214,29 @@ namespace ExperimentalThingsUsingWPF.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to العنوان مطلوب.
+        /// </summary>
+        public static string ErrorAddressRequired {
+            get {
+                return ResourceManager.GetString("ErrorAddressRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الاسم الكامل مطلوب.
         /// </summary>
         public static string ErrorFullNameRequired {
             get {
                 return ResourceManager.GetString("ErrorFullNameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to الاسم مطلوب.
+        /// </summary>
+        public static string ErrorNameRequired {
+            get {
+                return ResourceManager.GetString("ErrorNameRequired", resourceCulture);
             }
         }
         
@@ -259,6 +313,15 @@ namespace ExperimentalThingsUsingWPF.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to الاسم.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to كلمة السر.
         /// </summary>
         public static string Password {
@@ -300,6 +363,24 @@ namespace ExperimentalThingsUsingWPF.Translations {
         public static string Show {
             get {
                 return ResourceManager.GetString("Show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عرض بيانات التواصل.
+        /// </summary>
+        public static string ShowContacts {
+            get {
+                return ResourceManager.GetString("ShowContacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عرض الطلبات.
+        /// </summary>
+        public static string ShowRequests {
+            get {
+                return ResourceManager.GetString("ShowRequests", resourceCulture);
             }
         }
         

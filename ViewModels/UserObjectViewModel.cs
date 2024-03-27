@@ -18,11 +18,7 @@ public class UserObjectViewModel : ValidationViewModelBase, IEditableObject
 
     public int Id
     {
-        get => _model.Id; private set
-        {
-            _model.Id = value;
-            OnPropertyChanged();
-        }
+        get => _model.Id;
     }
     public UserType UserType
     {
@@ -98,7 +94,7 @@ public class UserObjectViewModel : ValidationViewModelBase, IEditableObject
 
     public void CancelEdit()
     {
-        Id = _previousUser.Id;
+        
         UserName = _previousUser.UserName;
         DisplayName = _previousUser.DisplayName;
         Password = _previousUser.Password;

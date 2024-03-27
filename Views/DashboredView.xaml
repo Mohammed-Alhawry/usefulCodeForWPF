@@ -146,7 +146,7 @@
                         <Button Content="{x:Static resx:Translations.AddUser}" Click="Users_AddButton_OnClick"/>
 
                     </TreeViewItem>
-                    <TreeViewItem>
+                    <TreeViewItem Selected="Clinics_OnSelected">
                         <TreeViewItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Tooth"
@@ -157,8 +157,8 @@
                                            Margin="16 0 0 0" />
                             </StackPanel>
                         </TreeViewItem.Header>
-                        <Button Content="{x:Static resx:Translations.Show}" />
-                        <Button Content="{x:Static resx:Translations.Add}" />
+                        <Button Content="{x:Static resx:Translations.Show}" Click="Clinics_ShowButton_OnClick"/>
+                        <Button Content="{x:Static resx:Translations.Add}" Click="Clinics_AddButton_OnClick"/>
 
                     </TreeViewItem>
                     <TreeViewItem>

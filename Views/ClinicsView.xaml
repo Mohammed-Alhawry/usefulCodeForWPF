@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="ExperimentalThingsUsingWPF.Views.ClinicsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ExperimentalThingsUsingWPF.Views"
+             xmlns:resx="clr-namespace:ExperimentalThingsUsingWPF.Translations"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate x:Key="showClinicContactsButton">
+            <Button Content="{x:Static resx:Translations.ShowContacts}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="showClinicRequestsButton">
+            <Button Content="{x:Static resx:Translations.ShowRequests}"/>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="editButton">
+            <Button Style="{StaticResource MaterialDesignIconButton}"
+                    Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid}, Path=DataContext.EditClinicCommand}">
+                <materialDesign:PackIcon Kind="Pencil" />
+            </Button>
+        </DataTemplate>
+
+        <DataTemplate x:Key="deleteButton">
+            <Button Style="{StaticResource MaterialDesignIconButton}"
+                    Foreground="Red"
+                    Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid}, Path=DataContext.OpenDeleteConfirmationDialogCommand}">
+                <materialDesign:PackIcon Kind="TrashCan" />
+            </Button>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <DockPanel>
+            <materialDesign:PackIcon Kind="Search"
+                                     VerticalAlignment="Center"
+                                     Height="25"
+                                     Width="25"
+                                     Foreground="{Binding ElementName=searchTextBox, Path=BorderBrush}" />
+            <TextBox x:Name="searchTextBox"
+                     VerticalAlignment="Center"
+                     Width="200"
+                     materialDesign:HintAssist.Hint="{x:Static resx:Translations.SearchTextBoxHint}"
+                     TextWrapping="Wrap" />
+            <TextBlock Text="{x:Static resx:Translations.FilterBy}"
+                       VerticalAlignment="Center"
+                       Margin="10 0" />
+            <ComboBox x:Name="filterByComboBox"
+                      Style="{StaticResource MaterialDesignComboBox}"
+                      VerticalAlignment="Center"
+                      MinWidth="20">
+                <ComboBoxItem Content="{x:Static resx:Translations.All}" />
+                <ComboBoxItem Content="{x:Static resx:Translations.Id}" />
+                <ComboBoxItem Content="{x:Static resx:Translations.Name}"
+                              IsSelected="True" />
+                <ComboBoxItem Content="{x:Static resx:Translations.Address}" />
+            </ComboBox>
+            <Button Content="{x:Static resx:Translations.Search}"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    Margin="10 0 0 0"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    Click="SearchButton_Click"
+                    IsDefault="True" />
+
+            <Button Content="{x:Static resx:Translations.AddClinic}"
+                    VerticalAlignment="Center"
+                    Cursor="Hand"
+                    HorizontalAlignment="Right"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    Command="{Binding OpenAddClinicWindowCommand}" />
+
+        </DockPanel>
+
+        <DataGrid Grid.Row="1"
+                  Margin="0 30"
+                  x:Name="clinicsGrid"
+                  AutoGenerateColumns="False"
+                  ColumnWidth="Auto"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  CanUserReorderColumns="False"
+                  ItemsSource="{Binding Clinics}"
+                  SelectedItem="{Binding SelectedClinic, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}"
+                                    Header="{x:Static resx:Translations.Id}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}" />
+                <DataGridTextColumn Binding="{Binding Name}"
+                                    Header="{x:Static resx:Translations.Name}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}" />
+                <DataGridTextColumn Binding="{Binding Address}"
+                                    Header="{x:Static resx:Translations.Address}"
+                                    ElementStyle="{StaticResource cellTextBlockStyle}" />
+                <DataGridTemplateColumn CanUserSort="False"
+                                        CellTemplate="{StaticResource showClinicContactsButton}" />
+                <DataGridTemplateColumn CanUserSort="False"
+                                        CellTemplate="{StaticResource showClinicRequestsButton}" />
+                <DataGridTemplateColumn CanUserSort="False"
+                                        CellTemplate="{StaticResource editButton}" />
+                <DataGridTemplateColumn CanUserSort="False"
+                                        CellTemplate="{StaticResource deleteButton}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>
