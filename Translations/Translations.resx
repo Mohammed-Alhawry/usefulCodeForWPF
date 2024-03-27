@@ -147,6 +147,9 @@
   <data name="AppName" xml:space="preserve">
     <value>ايكو</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
   <data name="DeleteConfirmationMessage" xml:space="preserve">
     <value>هل انت متأكد انك تريد الحذف</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>كلمة السر</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>بحث</value>

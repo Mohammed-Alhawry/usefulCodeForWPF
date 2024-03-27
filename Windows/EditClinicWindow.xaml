@@ -46,12 +46,12 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Content="Save"
+                <Button Content="{x:Static resx:Translations.Save}"
                         HorizontalAlignment="Center"
                         IsDefault="True"
                         Command="{Binding SaveClinicCommand}"
                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
-                <Button Content="Cancel"
+                <Button Content="{x:Static resx:Translations.Cancel}"
                         Grid.Column="1"
                         HorizontalAlignment="Center"
                         IsCancel="True"

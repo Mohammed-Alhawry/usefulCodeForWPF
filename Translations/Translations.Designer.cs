@@ -151,6 +151,15 @@ namespace ExperimentalThingsUsingWPF.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to الغاء.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to هل انت متأكد انك تريد الحذف.
         /// </summary>
         public static string DeleteConfirmationMessage {
@@ -327,6 +336,15 @@ namespace ExperimentalThingsUsingWPF.Translations {
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حفظ.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
         

@@ -147,6 +147,9 @@
   <data name="AppName" xml:space="preserve">
     <value>Echo</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="DeleteConfirmationMessage" xml:space="preserve">
     <value>Are you sure that you want to delete?</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
